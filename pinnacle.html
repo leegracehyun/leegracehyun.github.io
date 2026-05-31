@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Db2 Intelligence Center — Grace Lee</title>
+<title>Pinnacle — Grace Lee</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,71 +18,64 @@
   body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   ::selection{background:var(--accent);color:var(--paper)}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
-  .wide{max-width:1180px;margin:0 auto;padding:0 32px}
 
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:22px 32px;mix-blend-mode:difference;color:#fff}
   nav .logo{font-family:'Newsreader',serif;font-weight:600;font-size:19px;text-decoration:none;color:inherit}
   nav .back{font-size:14px;text-decoration:none;color:inherit;letter-spacing:.02em}
   nav .back:hover{opacity:.6}
 
-  /* hero */
   .cs-hero{padding:160px 0 60px}
   .eyebrow{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:30px;display:flex;align-items:center;gap:14px}
   .eyebrow::before{content:"";width:42px;height:1px;background:var(--accent)}
   .cs-hero h1{font-family:'Newsreader',serif;font-weight:340;font-size:clamp(2.6rem,7vw,5.2rem);line-height:.98;letter-spacing:-.025em;margin-bottom:28px}
-  .cs-hero .deck{font-size:clamp(1.15rem,2vw,1.4rem);color:var(--ink-soft);max-width:60ch;line-height:1.5}
+  .cs-hero .deck{font-size:clamp(1.15rem,2vw,1.4rem);color:var(--ink-soft);max-width:62ch;line-height:1.5}
 
   .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .meta .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
   .meta .v{font-size:15px;color:var(--ink);line-height:1.45}
   @media(max-width:760px){.meta{grid-template-columns:1fr 1fr;gap:22px}}
 
-  /* body sections */
   section.block{padding:64px 0}
   .knum{font-family:'Newsreader',serif;font-size:14px;color:var(--accent);font-weight:500;letter-spacing:.04em;margin-bottom:14px}
   h2.h{font-family:'Newsreader',serif;font-weight:380;font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;line-height:1.08;margin-bottom:26px}
-  h3.sh{font-family:'Newsreader',serif;font-weight:420;font-size:1.3rem;letter-spacing:-.01em;margin:38px 0 14px}
   p.t{font-size:18px;color:var(--ink-soft);margin-bottom:20px;max-width:68ch}
   p.t strong{color:var(--ink);font-weight:600}
 
-  /* callout box (explainer) */
   .note{background:var(--paper-2);border-left:3px solid var(--accent);padding:26px 30px;margin:30px 0;border-radius:0 6px 6px 0}
   .note .lbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
   .note p{font-size:16.5px;color:var(--ink-soft);margin:0;max-width:none}
 
-  /* pull quote / hill */
   .hill{margin:46px 0;padding:42px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
   .hill .lbl{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
   .hill blockquote{font-family:'Newsreader',serif;font-style:italic;font-weight:340;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.3;letter-spacing:-.01em;max-width:24ch;margin:0 auto}
 
-  /* image placeholder */
-  .ph{background:var(--paper-2);border:1.5px dashed rgba(28,25,22,.28);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;margin:30px 0;min-height:320px}
+  .ph{background:var(--paper-2);border:1.5px dashed rgba(0,25,41,.28);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;margin:30px 0;min-height:320px}
   .ph.tall{min-height:440px}
   .ph .picon{font-size:26px;color:var(--accent);margin-bottom:14px}
   .ph .plabel{font-family:'Newsreader',serif;font-size:18px;color:var(--ink);margin-bottom:6px}
   .ph .phint{font-size:13.5px;color:var(--ink-soft);max-width:46ch}
 
-  /* feature list */
   .feat{padding:30px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
   .feat:last-of-type{border-bottom:1px solid var(--line)}
   .feat .fn{font-family:'Newsreader',serif;font-size:15px;color:var(--accent);padding-top:4px}
-  .feat h4{font-family:'Newsreader',serif;font-weight:440;font-size:1.35rem;letter-spacing:-.01em;margin-bottom:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  .feat p{font-size:16.5px;color:var(--ink-soft);max-width:64ch}
-  .owned{font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--paper);padding:4px 10px;border-radius:100px;font-family:'Hanken Grotesk',sans-serif;font-weight:600}
+  .feat h4{font-family:'Newsreader',serif;font-weight:440;font-size:1.35rem;letter-spacing:-.01em;margin-bottom:10px}
+  .feat p{font-size:16.5px;color:var(--ink-soft);max-width:64ch;margin-bottom:10px}
+  .feat .goal{font-size:13px;letter-spacing:.04em;color:var(--accent);text-transform:uppercase;font-weight:600}
 
-  /* cake / roadmap */
-  .cake{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0}
-  .cake .c{background:var(--paper-2);border-radius:8px;padding:26px 24px;border-top:3px solid var(--accent)}
-  .cake .c .ct{font-family:'Newsreader',serif;font-size:1.15rem;margin-bottom:8px}
-  .cake .c .cd{font-size:14.5px;color:var(--ink-soft)}
-  @media(max-width:760px){.cake{grid-template-columns:1fr}}
-  @media(max-width:760px){.persona-row{grid-template-columns:1fr!important;gap:24px!important;}}
+  .stories{list-style:none;margin:24px 0;display:grid;gap:14px}
+  .stories li{background:var(--paper-2);border-radius:8px;padding:20px 24px;font-size:16.5px;color:var(--ink);font-family:'Newsreader',serif;font-style:italic;font-weight:340;line-height:1.4}
 
-  .findings{list-style:none;margin:24px 0}
+  .findings{list-style:none;margin:22px 0}
   .findings li{padding:16px 0 16px 30px;border-bottom:1px solid var(--line);position:relative;font-size:16.5px;color:var(--ink-soft);max-width:70ch}
   .findings li::before{content:"→";position:absolute;left:0;color:var(--accent)}
 
-  /* next / footer */
+  .snapshot{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0}
+  .stat{background:var(--paper-2);border-radius:8px;padding:28px 24px;text-align:left}
+  .stat .statnum{font-family:'Newsreader',serif;font-weight:360;font-size:clamp(2.1rem,4.5vw,3rem);line-height:1;letter-spacing:-.02em;margin-bottom:10px}
+  .stat .statnum em{font-style:normal;color:var(--accent)}
+  .stat .statlabel{font-size:14px;color:var(--ink-soft);line-height:1.4}
+  @media(max-width:760px){.snapshot{grid-template-columns:1fr}}
+
   .nextcta{padding:90px 0;text-align:center;background:var(--paper-2);margin-top:40px}
   .nextcta .small{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:22px}
   .nextcta a{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(2rem,6vw,3.6rem);color:var(--ink);text-decoration:none;transition:color .4s}
@@ -103,179 +96,155 @@
 
 <section class="cs-hero">
   <div class="wrap">
-    <div class="eyebrow">Case study — Enterprise / AI</div>
-    <h1>Db2 Intelligence Center</h1>
-    <p class="deck">An AI-driven database management console designed to streamline administration and empower DBAs of all experience levels to manage databases more efficiently — taken from concept to general availability.</p>
+    <div class="eyebrow">Case study — Consumer mobile</div>
+    <h1>Pinnacle</h1>
+    <p class="deck">A self-directed fitness app, designed end to end in a single month — built to teach beginners proper form, reward the habit, and connect novices with trainers. The passion project where I built my foundations, before IBM.</p>
 
     <div class="meta">
-      <div><div class="k">Role</div><div class="v">UX Designer — concept → GA</div></div>
-      <div><div class="k">Timeline</div><div class="v">2024–2025 · 1.5 years</div></div>
-      <div><div class="k">Team</div><div class="v">PM, development, visual design (Fang Shih)</div></div>
-      <div><div class="k">Tools</div><div class="v">Figma, Mural, Box</div></div>
+      <div><div class="k">Role</div><div class="v">Sole contributor</div></div>
+      <div><div class="k">Timeline</div><div class="v">Jun – Jul 2020 · 1 month</div></div>
+      <div><div class="k">Platform</div><div class="v">iOS app (concept)</div></div>
+      <div><div class="k">Tools</div><div class="v">Figma, Illustrator, InVision</div></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">01 — Context</div>
-    <h2 class="h reveal">What is Db2, and what were we building?</h2>
-    <p class="t reveal">Db2 is a relational database management system — an organized, secure digital filing system for very large amounts of data. It's really a family of data-management products, from an analytics warehouse to monitoring tools.</p>
+    <div class="knum reveal">01 — Overview</div>
+    <h2 class="h reveal">An app that teaches, rewards, and connects</h2>
+    <p class="t reveal">Pinnacle is an educational fitness app that pairs support with incentive. It's built around three ideas: a <strong>learning feature</strong> to build confidence, an <strong>incentive</strong> to keep people coming back, and a <strong>supportive community</strong> of both novices and trainers.</p>
     <div class="note reveal">
-      <div class="lbl">In plain terms</div>
-      <p>If you've never touched a database: think of Db2 as a massive, high-security filing system that companies trust to never break, never lose data, and never slow down. Database administrators are the people who keep it that way.</p>
-    </div>
-    <p class="t reveal"><strong>Db2 Intelligence Center</strong> is an AI-driven console that brings database administration into a single, intelligent workspace. Db2 sat under my team's portfolio, so I was part of the original design team that took it to market in June 2025 — work that built on everything I'd done across the Db2 family since joining IBM in 2021.</p>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="knum reveal">02 — The user</div>
-    <h2 class="h reveal">Meet Bob, a Database Administrator</h2>
-    <div class="reveal persona-row" style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;margin-top:14px;">
-      <p class="t" style="margin:0;">Our target user is the DBA — the person whose job is to make sure databases never break, never lose data, and never get slow. Bob is responsible for the overall health of his company's databases. DBAs like Bob are the guardians of a company's data.</p>
-      <img src="images/boy-persona.png" alt="Bob, the DBA — persona illustration" style="display:block;width:100%;max-width:340px;margin:0 auto;">
+      <div class="lbl">The moment</div>
+      <p>Mid-2020. With studios closed and time suddenly abundant, at-home fitness exploded — and a wave of total beginners started working out for the first time, mostly by following along to videos. Pinnacle was my response to that moment.</p>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">03 — The problem</div>
-    <h2 class="h reveal">Where the current experience was breaking down</h2>
-    <p class="t reveal">To design for Bob, we first had to understand which of his jobs-to-be-done actually needed relief. In a workshop in April 2024 we gathered pain points from real DBAs and grouped them into themes.</p>
+    <div class="knum reveal">02 — The problem</div>
+    <h2 class="h reveal">Starting is easy. Staying is hard.</h2>
+    <p class="t reveal">Almost everyone is motivated to exercise at some point — but the motivation to <em>maintain</em> a routine tends to fall flat. The constraints are partly practical (time) and partly mental: we lose the confidence to keep pushing, especially when we're unsure we're even doing it right.</p>
+    <div class="hill reveal">
+      <div class="lbl">How might we</div>
+      <blockquote>"How might we help people maintain their fitness health?"</blockquote>
+    </div>
+    <p class="t reveal">The solution I landed on: an app that teaches correct form so beginners stop googling "correct plank form" mid-workout, rewards consistency with points redeemable for coupons, and connects novices with trainers who share their own programs and build a following.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">03 — Research</div>
+    <h2 class="h reveal">A hunch, then the proof</h2>
+    <p class="t reveal"><strong>Secondary research.</strong> The signals were everywhere: fitness-equipment demand jumped 55% in a single mid-March week per the Digital Economy Index, major studios from Planet Fitness to Nike Training Club rushed out free programs, and SocialBlade showed fitness creators like Chloe Ting pulling 100M+ views in a month. People were exercising more than ever.</p>
+    <p class="t reveal"><strong>A public survey.</strong> I ran a short survey across my social platforms to understand <em>why</em>. Two insights cut through: people had picked it up partly out of pandemic boredom and newfound time, and they strongly preferred following along to video — being able to pause, replay, and watch a visual reference made all the difference.</p>
+    <div class="note reveal">
+      <div class="lbl">In their words</div>
+      <p>"I knew there were videos, but I didn't start until quarantine — it's nice watching someone else do it on video, because you can pause and stop whenever."</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">04 — Who I designed for</div>
+    <h2 class="h reveal">Two sides of one community</h2>
+    <p class="t reveal">Pinnacle is built for both <strong>fitness novices</strong> and <strong>fitness experts</strong>. A college student new to working out and a seasoned trainer should each find a purpose in the app — and ideally learn from each other when their paths cross. Personas spanning that range kept my decisions honest, like Mason Fox, who just wants to feel confident in his clothes.</p>
+    <ul class="stories reveal">
+      <li>"As a dad, I need a consistent, healthier lifestyle so I can keep up with my kids."</li>
+      <li>"As a high-school senior, I need to start working out so I can find the courage to ask Stacey on a date."</li>
+      <li>"As a fitness trainer, I need to mentor people toward healthier lives — which fulfills my own mission too."</li>
+    </ul>
     <div class="ph reveal">
       <div class="picon">◳</div>
-      <div class="plabel">Pain-point themes</div>
-      <div class="phint">Add the affinity-mapped themes from the April 2024 workshop (your Mural board or a cleaned-up summary graphic).</div>
+      <div class="plabel">Personas</div>
+      <div class="phint">Drop in your persona artboards (Mason and the others) here.</div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">04 — Direction</div>
-    <h2 class="h reveal">Our hill</h2>
-    <p class="t reveal">At IBM we use <strong>hills</strong> — a single, clear sentence that captures the meaningful outcome we're designing toward, without overcomplicating it. It sets the direction for everything that follows.</p>
-    <div class="hill reveal">
-      <div class="lbl">The hill</div>
-      <blockquote>"As a DBA, I can manage my databases with the assistance of AI so that I can accelerate my workflow."</blockquote>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="knum reveal">05 — Planning</div>
-    <h2 class="h reveal">Roadmap: the cake method</h2>
-    <p class="t reveal">Working closely with PM, we drafted a roadmap and used the cake method to decide what design would tackle, and when.</p>
-    <div class="cake reveal">
-      <div class="c"><div class="ct">🧁 Cupcake</div><div class="cd">What design addresses now — the essential first slice.</div></div>
-      <div class="c"><div class="ct">🎂 Birthday cake</div><div class="cd">What comes next, building on the foundation.</div></div>
-      <div class="c"><div class="ct">💍 Wedding cake</div><div class="cd">The blue-sky vision for where the product could go.</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="knum reveal">06 — Design concepts</div>
-    <h2 class="h reveal">The features we shaped</h2>
-    <p class="t reveal">From the requirements, we settled on five core capabilities. The two I owned end to end are marked.</p>
+    <div class="knum reveal">05 — The solution</div>
+    <h2 class="h reveal">Three features, three jobs</h2>
 
     <div class="feat reveal">
       <div class="fn">01</div>
       <div>
-        <h4>Unified management</h4>
-        <p>A single, intuitive pane of glass to monitor and manage a fleet of Db2 instances across hybrid environments — reducing context-switching and improving visibility across the whole estate. This made the landing page critical to our users' efficiency.</p>
+        <div class="goal">Educate</div>
+        <h4>Workout library</h4>
+        <p>A Wikipedia-style reference paired with a video demo for every move — animated or real-life — so beginners can learn proper form and understand exactly what each exercise targets. It takes the fear and guesswork out of getting started.</p>
       </div>
     </div>
 
     <div class="feat reveal">
       <div class="fn">02</div>
       <div>
-        <h4>Monitoring drill-downs</h4>
-        <p>Db2-specific monitoring with deep visibility into CPU, I/O, waits, and locks — enabling fast root-cause identification, preventing degradation, and cutting troubleshooting time. A monitoring hub directly addressed one of Bob's daily pain points.</p>
+        <div class="goal">Empower</div>
+        <h4>Programs &amp; recommendations</h4>
+        <p>Users build their own workouts, or — if they don't know where to start — get recommended pre-made programs. This serves novices and gives trainers a way to share their programs and grow a following.</p>
       </div>
     </div>
 
     <div class="feat reveal">
       <div class="fn">03</div>
       <div>
-        <h4>Query optimization <span class="owned">I owned this</span></h4>
-        <p>Automated analysis and tuning of queries with AI-powered recommendations for indexing and structure. I drove the data workbench so users could optimize and complete their work through the UI rather than the command line.</p>
-      </div>
-    </div>
-
-    <div class="feat reveal">
-      <div class="fn">04</div>
-      <div>
-        <h4>Tune configurations <span class="owned">I owned this</span></h4>
-        <p>Simplified configuration management — an intuitive interface to view, edit, and track Db2 settings, minimizing errors and reducing manual overhead. Another part of the data workbench I drove, letting users fine-tune and resolve issues quickly.</p>
-      </div>
-    </div>
-
-    <div class="feat reveal">
-      <div class="fn">05</div>
-      <div>
-        <h4>AI-powered database assistant <span class="owned">I owned this</span></h4>
-        <p>A generative-AI assistant offering guidance in natural language. Using telemetry, it helps DBAs resolve common issues, optimize performance, and skill up on Db2 faster — answering questions specific to your Db2 version. This assistant is where the whole product began, and the effort I led first before it grew into a full product.</p>
+        <div class="goal">Motivate</div>
+        <h4>Challenges &amp; points</h4>
+        <p>Quick daily challenges spark a little competitive fire, and finishing workouts — or having your shared program completed by others — earns points redeemable for coupons at favorite stores. A reason to come back, because the hardest step is starting.</p>
       </div>
     </div>
 
     <div class="ph tall reveal">
       <div class="picon">◳</div>
-      <div class="plabel">Design concept screens</div>
-      <div class="phint">Add your hi-fi screens here — landing page, monitoring hub, and the data workbench. Mix full-width shots with detail crops.</div>
+      <div class="plabel">Feature screens &amp; prototype</div>
+      <div class="phint">Add your final feature screens here — and link the InVision demo if you'd like it embedded.</div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">07 — Validation</div>
-    <h2 class="h reveal">Usability testing, at scale</h2>
-    <p class="t reveal">Throughout the project we ran biweekly feedback sessions with members of Db2's technical advisory board — users who know the product inside out. But we wanted to validate at a larger scale.</p>
-    <p class="t reveal">Db2 has a famously loyal community, and every year they gather at <strong>IDUG</strong> (the International Db2 User Group — owned by the users, not IBM). With IDUG EMEA in Valencia, Spain around the corner, I represented design alongside visual designer Fang Shih to test our work. That meant building a prototype in a week — which my team and I pulled off in time for testing.</p>
+    <div class="knum reveal">06 — Process</div>
+    <h2 class="h reveal">From flows to wireframes to brand</h2>
+    <p class="t reveal">I mapped a user flow to trace how someone would actually move through the app, then worked from low-fidelity sketches up through mid-fidelity wireframes. For branding, I chose a blue-green palette for its associations with energy, balance, and growth — though, as it turned out, that wasn't my first instinct.</p>
     <div class="ph reveal">
       <div class="picon">◳</div>
-      <div class="plabel">Testing at IDUG Valencia</div>
-      <div class="phint">Add photos from the session, your recruitment/methodology slide, or a shot of the prototype in use.</div>
+      <div class="plabel">User flow, wireframes &amp; branding</div>
+      <div class="phint">Add your flow chart, the lo-fi → mid-fi wireframes, and the branding/color exploration.</div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">08 — Findings</div>
-    <h2 class="h reveal">What participants told us — the data workbench</h2>
-    <p class="t reveal">Participants appreciated the clean, efficient layout and the logical order of information. The feedback that shaped our next iterations:</p>
+    <div class="knum reveal">07 — Testing &amp; iteration</div>
+    <h2 class="h reveal">Where the first version was wrong</h2>
+    <p class="t reveal"><strong>A/B testing.</strong> Five participants compared two layouts; four preferred seeing their progress first. They also flagged that it took too many clicks to get there — so I moved progress into the profile, a place people visit often anyway.</p>
+    <p class="t reveal"><strong>Usability testing.</strong> Five more participants walked the app over video calls — three pandemic-era beginners and two long-time gym-goers. What I heard:</p>
     <ul class="findings reveal">
-      <li>Modular design — with the ability to expand original SQL and optimized indexes — was seen as critical.</li>
-      <li>Requests for parametric markers within SQL statements.</li>
-      <li>Users wanted to see current index and query-origin information (which the alert center and monitoring hub help surface).</li>
-      <li>Strong emphasis on verifying optimized indexes independently.</li>
-      <li>Several requests for color-coded syntax.</li>
+      <li>The workout library and its in-depth tutorials were the clear favorite.</li>
+      <li>Consistent, welcoming branding made the app feel credible.</li>
+      <li>The stats card confused people — it wasn't clear you could tap to flip it.</li>
+      <li>My original vibrant red read as "danger," not the feeling you want after a workout.</li>
     </ul>
+    <p class="t reveal">That last point opened the most important change. My first iteration used a bold red background — and tested against green, it <strong>failed WCAG AA and AAA contrast outright</strong>, which would have excluded color-blind and low-vision users. I rebuilt on a neutral black ground and hit <strong>AAA across the board</strong>. I also moved from pure graphics to a hybrid of icons and real photos, and added a "resume your latest workout" shortcut on the home screen.</p>
+    <div class="snapshot reveal">
+      <div class="stat"><div class="statnum">5 + <em>5</em></div><div class="statlabel">Participants across A/B and usability testing</div></div>
+      <div class="stat"><div class="statnum"><em>AAA</em></div><div class="statlabel">WCAG contrast after the redesign — up from a failing palette</div></div>
+      <div class="stat"><div class="statnum"><em>2</em></div><div class="statlabel">Full iterations, start to finish</div></div>
+    </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">09 — Reflection</div>
-    <h2 class="h reveal">A question that will shape what's next</h2>
-    <p class="t reveal">Across conversations with customers and the product team, one question kept rising to the top: <strong>how do we build a product whose core audience is getting older, while also making it accessible to a younger, newer generation of DBAs?</strong></p>
-    <p class="t reveal">Db2's primary users are senior DBAs, and they're the first to worry about the next generation — how to onboard junior DBAs and help them get familiar with the product. That points toward developer editions and pricing plans accessible to a far wider audience.</p>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="knum reveal">10 — Outcome</div>
-    <h2 class="h reveal">Launch &amp; reception</h2>
-    <p class="t reveal">I returned the following year to IDUG NA in Atlanta — this time as Db2 Intelligence Center reached general availability. We received widespread acclaim for the look of the product and, most importantly, its intuitive experience, validating exactly what we'd seen in testing in Valencia.</p>
-    <p class="t reveal">This product was made with care — from daily evening working sessions with our development team in India to design reviews with PM during the day. We worked around the clock as a team. Db2 has a special place in my heart, and I'm honored to have been part of its debut.</p>
+    <div class="knum reveal">08 — Reflection</div>
+    <h2 class="h reveal">No one starts perfectly</h2>
+    <p class="t reveal">Pinnacle taught me to articulate <em>why</em> one design beats its alternative, not just to trust my gut — and that iteration isn't a failure state, it's the work. It also surfaced a real tendency of mine toward vivid color, and pushed me to earn restraint through accessibility rather than aesthetics alone.</p>
+    <p class="t reveal">It's an early project, and it shows its age in places. But the instincts I leaned on here — research first, design for the edges, test honestly, iterate — are the same ones I carried into enterprise work at IBM.</p>
   </div>
 </section>
 
