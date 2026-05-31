@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>watsonx.data — Grace Lee</title>
+<title>Pinnacle — Grace Lee</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
   .eyebrow{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:30px;display:flex;align-items:center;gap:14px}
   .eyebrow::before{content:"";width:42px;height:1px;background:var(--accent)}
   .cs-hero h1{font-family:'Newsreader',serif;font-weight:340;font-size:clamp(2.6rem,7vw,5.2rem);line-height:.98;letter-spacing:-.025em;margin-bottom:28px}
-  .cs-hero .deck{font-size:clamp(1.15rem,2vw,1.4rem);color:var(--ink-soft);max-width:60ch;line-height:1.5}
+  .cs-hero .deck{font-size:clamp(1.15rem,2vw,1.4rem);color:var(--ink-soft);max-width:62ch;line-height:1.5}
 
   .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .meta .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
@@ -47,7 +47,7 @@
 
   .hill{margin:46px 0;padding:42px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
   .hill .lbl{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
-  .hill blockquote{font-family:'Newsreader',serif;font-style:italic;font-weight:340;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.3;letter-spacing:-.01em;max-width:26ch;margin:0 auto}
+  .hill blockquote{font-family:'Newsreader',serif;font-style:italic;font-weight:340;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.3;letter-spacing:-.01em;max-width:24ch;margin:0 auto}
 
   .ph{background:var(--paper-2);border:1.5px dashed rgba(0,25,41,.28);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;margin:30px 0;min-height:320px}
   .ph.tall{min-height:440px}
@@ -58,13 +58,16 @@
   .feat{padding:30px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
   .feat:last-of-type{border-bottom:1px solid var(--line)}
   .feat .fn{font-family:'Newsreader',serif;font-size:15px;color:var(--accent);padding-top:4px}
-  .feat h4{font-family:'Newsreader',serif;font-weight:440;font-size:1.35rem;letter-spacing:-.01em;margin-bottom:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  .feat p{font-size:16.5px;color:var(--ink-soft);max-width:64ch}
-  .owned{font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--paper);padding:4px 10px;border-radius:100px;font-family:'Hanken Grotesk',sans-serif;font-weight:600}
+  .feat h4{font-family:'Newsreader',serif;font-weight:440;font-size:1.35rem;letter-spacing:-.01em;margin-bottom:10px}
+  .feat p{font-size:16.5px;color:var(--ink-soft);max-width:64ch;margin-bottom:10px}
+  .feat .goal{font-size:13px;letter-spacing:.04em;color:var(--accent);text-transform:uppercase;font-weight:600}
 
-  .steps{list-style:none;counter-reset:s;margin:26px 0}
-  .steps li{counter-increment:s;padding:14px 0 14px 46px;border-bottom:1px solid var(--line);position:relative;font-size:16.5px;color:var(--ink-soft);max-width:70ch}
-  .steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:14px;font-family:'Newsreader',serif;font-size:14px;color:var(--accent)}
+  .stories{list-style:none;margin:24px 0;display:grid;gap:14px}
+  .stories li{background:var(--paper-2);border-radius:8px;padding:20px 24px;font-size:16.5px;color:var(--ink);font-family:'Newsreader',serif;font-style:italic;font-weight:340;line-height:1.4}
+
+  .findings{list-style:none;margin:22px 0}
+  .findings li{padding:16px 0 16px 30px;border-bottom:1px solid var(--line);position:relative;font-size:16.5px;color:var(--ink-soft);max-width:70ch}
+  .findings li::before{content:"→";position:absolute;left:0;color:var(--accent)}
 
   .snapshot{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0}
   .stat{background:var(--paper-2);border-radius:8px;padding:28px 24px;text-align:left}
@@ -93,77 +96,71 @@
 
 <section class="cs-hero">
   <div class="wrap">
-    <div class="eyebrow">Case study — Enterprise / PLG</div>
-    <h1>watsonx.data</h1>
-    <p class="deck">Redesigning the first-run experience for an open data lakehouse — turning a slow, multi-screen provisioning flow into something a prospect can get through in about a minute.</p>
+    <div class="eyebrow">Case study — Consumer mobile</div>
+    <h1>Pinnacle</h1>
+    <p class="deck">A self-directed fitness app, designed end to end in a single month — built to teach beginners proper form, reward the habit, and connect novices with trainers. The passion project where I built my foundations, before IBM.</p>
 
     <div class="meta">
-      <div><div class="k">Role</div><div class="v">UX designer · PLG focus</div></div>
-      <div><div class="k">Timeline</div><div class="v">2023 GA → 2025 redesign</div></div>
-      <div><div class="k">Surface</div><div class="v">Sign-up &amp; provisioning</div></div>
-      <div><div class="k">Outcome</div><div class="v">320× signup growth</div></div>
+      <div><div class="k">Role</div><div class="v">Sole contributor</div></div>
+      <div><div class="k">Timeline</div><div class="v">Jun – Jul 2020 · 1 month</div></div>
+      <div><div class="k">Platform</div><div class="v">iOS app (concept)</div></div>
+      <div><div class="k">Tools</div><div class="v">Figma, Illustrator, InVision</div></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">01 — Context</div>
-    <h2 class="h reveal">What is watsonx.data?</h2>
-    <p class="t reveal">watsonx.data is IBM's open data lakehouse — part of the watsonx family alongside <strong>watsonx.ai</strong> and <strong>watsonx.gov</strong>, under Data &amp; AI. It's built to scale workloads and analytics across all your data, wherever it lives.</p>
+    <div class="knum reveal">01 — Overview</div>
+    <h2 class="h reveal">An app that teaches, rewards, and connects</h2>
+    <p class="t reveal">Pinnacle is an educational fitness app that pairs support with incentive. It's built around three ideas: a <strong>learning feature</strong> to build confidence, an <strong>incentive</strong> to keep people coming back, and a <strong>supportive community</strong> of both novices and trainers.</p>
     <div class="note reveal">
-      <div class="lbl">In plain terms</div>
-      <p>A data lake stores raw, diverse data cheaply. A data warehouse keeps structured data fast and report-ready. A lakehouse is the hybrid — the flexibility of a lake with the performance of a warehouse, so teams can query data where it sits.</p>
-    </div>
-    <p class="t reveal">It lives in IBM's Hybrid Data Management portfolio, and my focus there was product-led growth — the experience a prospect has when they first try the product, on their own, without a sales call.</p>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="knum reveal">02 — The user</div>
-    <h2 class="h reveal">Meet Sue, a data engineer</h2>
-    <p class="t reveal">Data engineers make sure data is accessible to the right people in the right place — moving data to a central location, providing high-quality transformed data for business use, and keeping governance intact along the way.</p>
-    <p class="t reveal">People like Sue need somewhere to actually work with all that data — a lake, a warehouse, or a lakehouse. watsonx.data is meant to be that place. But first, she has to get in the door.</p>
-    <div class="ph reveal">
-      <div class="picon">◳</div>
-      <div class="plabel">Persona: "Sue, the data engineer"</div>
-      <div class="phint">Drop in your Sue persona artboard and the data lake / warehouse / lakehouse explainer here.</div>
+      <div class="lbl">The moment</div>
+      <p>Mid-2020. With studios closed and time suddenly abundant, at-home fitness exploded — and a wave of total beginners started working out for the first time, mostly by following along to videos. Pinnacle was my response to that moment.</p>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">03 — The problem</div>
-    <h2 class="h reveal">Getting in the door was the wall</h2>
-    <p class="t reveal">Before Sue could do anything useful, simply getting watsonx.data provisioned was a slog. The path wound through the marketing site, account creation, the IBM Cloud console, a catalog search, a plan picker, and a resource list — then ended in a long wait.</p>
-    <ol class="steps reveal">
-      <li>Start on the watsonx.data marketing page, click "Start a free trial."</li>
-      <li>Log in or create an IBMid.</li>
-      <li>Land in the IBM Cloud console and "create a resource."</li>
-      <li>Search the IBM Cloud catalog for watsonx.data.</li>
-      <li>Select the Lite plan and kick off provisioning.</li>
-      <li>Hunt through the resource list — expanding "Databases" — to find the instance.</li>
-      <li>Open watsonx.data and step through a configuration wizard.</li>
-      <li>Wait — provisioning could take up to 15 minutes, watching a progress bar.</li>
-    </ol>
-    <p class="t reveal">All told: roughly <strong>10 screens and 9 clicks</strong> before the product did anything, capped by a <strong>15-minute provisioning wait staring at a blank loading screen</strong>. For a self-serve trial, that's where prospects quietly give up.</p>
-    <div class="ph reveal">
-      <div class="picon">◳</div>
-      <div class="plabel">The "as-is" flow</div>
-      <div class="phint">Add your as-is walkthrough screens — marketing page through the 15-minute provisioning bar.</div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="knum reveal">04 — The goal</div>
-    <h2 class="h reveal">Our problem statement</h2>
+    <div class="knum reveal">02 — The problem</div>
+    <h2 class="h reveal">Starting is easy. Staying is hard.</h2>
+    <p class="t reveal">Almost everyone is motivated to exercise at some point — but the motivation to <em>maintain</em> a routine tends to fall flat. The constraints are partly practical (time) and partly mental: we lose the confidence to keep pushing, especially when we're unsure we're even doing it right.</p>
     <div class="hill reveal">
-      <div class="lbl">The problem</div>
-      <blockquote>"There are too many screens to provision watsonx.data. Simplify the path and cut provisioning from 15 minutes to 1."</blockquote>
+      <div class="lbl">How might we</div>
+      <blockquote>"How might we help people maintain their fitness health?"</blockquote>
+    </div>
+    <p class="t reveal">The solution I landed on: an app that teaches correct form so beginners stop googling "correct plank form" mid-workout, rewards consistency with points redeemable for coupons, and connects novices with trainers who share their own programs and build a following.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">03 — Research</div>
+    <h2 class="h reveal">A hunch, then the proof</h2>
+    <p class="t reveal"><strong>Secondary research.</strong> The signals were everywhere: fitness-equipment demand jumped 55% in a single mid-March week per the Digital Economy Index, major studios from Planet Fitness to Nike Training Club rushed out free programs, and SocialBlade showed fitness creators like Chloe Ting pulling 100M+ views in a month. People were exercising more than ever.</p>
+    <p class="t reveal"><strong>A public survey.</strong> I ran a short survey across my social platforms to understand <em>why</em>. Two insights cut through: people had picked it up partly out of pandemic boredom and newfound time, and they strongly preferred following along to video — being able to pause, replay, and watch a visual reference made all the difference.</p>
+    <div class="note reveal">
+      <div class="lbl">In their words</div>
+      <p>"I knew there were videos, but I didn't start until quarantine — it's nice watching someone else do it on video, because you can pause and stop whenever."</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">04 — Who I designed for</div>
+    <h2 class="h reveal">Two sides of one community</h2>
+    <p class="t reveal">Pinnacle is built for both <strong>fitness novices</strong> and <strong>fitness experts</strong>. A college student new to working out and a seasoned trainer should each find a purpose in the app — and ideally learn from each other when their paths cross. Personas spanning that range kept my decisions honest, like Mason Fox, who just wants to feel confident in his clothes.</p>
+    <ul class="stories reveal">
+      <li>"As a dad, I need a consistent, healthier lifestyle so I can keep up with my kids."</li>
+      <li>"As a high-school senior, I need to start working out so I can find the courage to ask Stacey on a date."</li>
+      <li>"As a fitness trainer, I need to mentor people toward healthier lives — which fulfills my own mission too."</li>
+    </ul>
+    <div class="ph reveal">
+      <div class="picon">◳</div>
+      <div class="plabel">Personas</div>
+      <div class="phint">Drop in your persona artboards (Mason and the others) here.</div>
     </div>
   </div>
 </section>
@@ -171,81 +168,83 @@
 <section class="block">
   <div class="wrap">
     <div class="knum reveal">05 — The solution</div>
-    <h2 class="h reveal">What changed in the to-be</h2>
-    <p class="t reveal">The redesign collapsed the path and removed the dead time — and where waiting was unavoidable, it turned that wait into something useful.</p>
+    <h2 class="h reveal">Three features, three jobs</h2>
 
     <div class="feat reveal">
       <div class="fn">01</div>
       <div>
-        <h4>One provisioning page, with a use case</h4>
-        <p>Instead of scattering setup across the console and catalog, a single provisioning page lets the prospect pick a use case (like data engineering) that bundles the right engines for them. Choosing the use case up front is the key lever that cuts the bulk of the provisioning time.</p>
+        <div class="goal">Educate</div>
+        <h4>Workout library</h4>
+        <p>A Wikipedia-style reference paired with a video demo for every move — animated or real-life — so beginners can learn proper form and understand exactly what each exercise targets. It takes the fear and guesswork out of getting started.</p>
       </div>
     </div>
 
     <div class="feat reveal">
       <div class="fn">02</div>
       <div>
-        <h4>Consistent across watsonx</h4>
-        <p>The same provisioning page is shared by watsonx.ai and watsonx.gov, so the experience is consistent across the whole watsonx family — and a prospect who knows one knows them all.</p>
+        <div class="goal">Empower</div>
+        <h4>Programs &amp; recommendations</h4>
+        <p>Users build their own workouts, or — if they don't know where to start — get recommended pre-made programs. This serves novices and gives trainers a way to share their programs and grow a following.</p>
       </div>
     </div>
 
     <div class="feat reveal">
       <div class="fn">03</div>
       <div>
-        <h4>No more blank-screen wait</h4>
-        <p>When provisioning does take a moment, an educational "preparing your journey" screen teaches key parts of the lakehouse while the user waits — turning dead time into onboarding instead of a frozen progress bar.</p>
-      </div>
-    </div>
-
-    <div class="feat reveal">
-      <div class="fn">04</div>
-      <div>
-        <h4>A welcome, not an empty room</h4>
-        <p>Rather than dropping the user into a bare console, a welcome modal offers two doors: take a quick product tour, or jump straight into sample data and start working.</p>
+        <div class="goal">Motivate</div>
+        <h4>Challenges &amp; points</h4>
+        <p>Quick daily challenges spark a little competitive fire, and finishing workouts — or having your shared program completed by others — earns points redeemable for coupons at favorite stores. A reason to come back, because the hardest step is starting.</p>
       </div>
     </div>
 
     <div class="ph tall reveal">
       <div class="picon">◳</div>
-      <div class="plabel">The "to-be" screens</div>
-      <div class="phint">Add your to-be designs — the provisioning page with use-case selection, the educational loading screen, and the welcome modal.</div>
+      <div class="plabel">Feature screens &amp; prototype</div>
+      <div class="phint">Add your final feature screens here — and link the InVision demo if you'd like it embedded.</div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">06 — Impact</div>
-    <h2 class="h reveal">The numbers that moved</h2>
-    <p class="t reveal">A faster, simpler first run didn't just feel better — it showed up in the funnel.</p>
-
-    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:8px 0 16px;" class="reveal">Business outcomes</div>
-    <div class="snapshot reveal">
-      <div class="stat"><div class="statnum"><em>320×</em></div><div class="statlabel">Signup volume — from ~33 to a peak of 10,558 monthly signups</div></div>
-      <div class="stat"><div class="statnum">6.28<em>%</em></div><div class="statlabel">Signup rate — +57% over IBM's 4% benchmark</div></div>
-      <div class="stat"><div class="statnum">55<em>%</em></div><div class="statlabel">Trial conversion — +83% over IBM's 30% benchmark</div></div>
+    <div class="knum reveal">06 — Process</div>
+    <h2 class="h reveal">From flows to wireframes to brand</h2>
+    <p class="t reveal">I mapped a user flow to trace how someone would actually move through the app, then worked from low-fidelity sketches up through mid-fidelity wireframes. For branding, I chose a blue-green palette for its associations with energy, balance, and growth — though, as it turned out, that wasn't my first instinct.</p>
+    <div class="ph reveal">
+      <div class="picon">◳</div>
+      <div class="plabel">User flow, wireframes &amp; branding</div>
+      <div class="phint">Add your flow chart, the lo-fi → mid-fi wireframes, and the branding/color exploration.</div>
     </div>
-
-    <p class="t reveal">Underneath those outcomes, the redesign made the path itself dramatically shorter:</p>
-
-    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:8px 0 16px;" class="reveal">Efficiency gains</div>
-    <div class="snapshot reveal">
-      <div class="stat"><div class="statnum">10 → <em>5</em></div><div class="statlabel">Screens to provision, cut in half (−50%)</div></div>
-      <div class="stat"><div class="statnum">9 → <em>3</em></div><div class="statlabel">Clicks to reach the console (−67%)</div></div>
-      <div class="stat"><div class="statnum">15m → <em>~1m</em></div><div class="statlabel">Provisioning time, no blank-screen wait</div></div>
-    </div>
-
-    <p class="t reveal">Beyond the numbers, the work delivered a better getting-started experience inside the console and tighter consistency across the watsonx products.</p>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">07 — Reflection</div>
-    <h2 class="h reveal">Good design is invisible</h2>
-    <p class="t reveal">No user ever needs to see the behind-the-scenes of design. Underneath this simple flow sat detailed user-flow charts to capture the architecture's nuances, careful design handoff to development, and playback to leadership to keep everyone aligned.</p>
-    <p class="t reveal">At the core, I'm a designer who cares about the humane side of both the process and the result — and about a safe environment for the team doing the work.</p>
+    <div class="knum reveal">07 — Testing &amp; iteration</div>
+    <h2 class="h reveal">Where the first version was wrong</h2>
+    <p class="t reveal"><strong>A/B testing.</strong> Five participants compared two layouts; four preferred seeing their progress first. They also flagged that it took too many clicks to get there — so I moved progress into the profile, a place people visit often anyway.</p>
+    <p class="t reveal"><strong>Usability testing.</strong> Five more participants walked the app over video calls — three pandemic-era beginners and two long-time gym-goers. What I heard:</p>
+    <ul class="findings reveal">
+      <li>The workout library and its in-depth tutorials were the clear favorite.</li>
+      <li>Consistent, welcoming branding made the app feel credible.</li>
+      <li>The stats card confused people — it wasn't clear you could tap to flip it.</li>
+      <li>My original vibrant red read as "danger," not the feeling you want after a workout.</li>
+    </ul>
+    <p class="t reveal">That last point opened the most important change. My first iteration used a bold red background — and tested against green, it <strong>failed WCAG AA and AAA contrast outright</strong>, which would have excluded color-blind and low-vision users. I rebuilt on a neutral black ground and hit <strong>AAA across the board</strong>. I also moved from pure graphics to a hybrid of icons and real photos, and added a "resume your latest workout" shortcut on the home screen.</p>
+    <div class="snapshot reveal">
+      <div class="stat"><div class="statnum">5 + <em>5</em></div><div class="statlabel">Participants across A/B and usability testing</div></div>
+      <div class="stat"><div class="statnum"><em>AAA</em></div><div class="statlabel">WCAG contrast after the redesign — up from a failing palette</div></div>
+      <div class="stat"><div class="statnum"><em>2</em></div><div class="statlabel">Full iterations, start to finish</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">08 — Reflection</div>
+    <h2 class="h reveal">No one starts perfectly</h2>
+    <p class="t reveal">Pinnacle taught me to articulate <em>why</em> one design beats its alternative, not just to trust my gut — and that iteration isn't a failure state, it's the work. It also surfaced a real tendency of mine toward vivid color, and pushed me to earn restraint through accessibility rather than aesthetics alone.</p>
+    <p class="t reveal">It's an early project, and it shows its age in places. But the instincts I leaned on here — research first, design for the edges, test honestly, iterate — are the same ones I carried into enterprise work at IBM.</p>
   </div>
 </section>
 
