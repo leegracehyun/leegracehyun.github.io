@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>watsonx.data — Grace Lee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#eaf3ef;--paper-2:#dde9e4;--ink:#001929;--ink-soft:#44555e;
+    --accent:#0fae84;--accent-deep:#0a8568;--line:rgba(0,25,41,.14);--maxw:920px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Hanken Grotesk',sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  ::selection{background:var(--accent);color:var(--paper)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:22px 32px;mix-blend-mode:difference;color:#fff}
+  nav .logo{font-family:'Newsreader',serif;font-weight:600;font-size:19px;text-decoration:none;color:inherit}
+  nav .back{font-size:14px;text-decoration:none;color:inherit;letter-spacing:.02em}
+  nav .back:hover{opacity:.6}
+
+  .cs-hero{padding:160px 0 60px}
+  .eyebrow{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+  .eyebrow::before{content:"";width:42px;height:1px;background:var(--accent)}
+  .cs-hero h1{font-family:'Newsreader',serif;font-weight:340;font-size:clamp(2.6rem,7vw,5.2rem);line-height:.98;letter-spacing:-.025em;margin-bottom:28px}
+  .cs-hero .deck{font-size:clamp(1.15rem,2vw,1.4rem);color:var(--ink-soft);max-width:60ch;line-height:1.5}
+
+  .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .meta .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .meta .v{font-size:15px;color:var(--ink);line-height:1.45}
+  @media(max-width:760px){.meta{grid-template-columns:1fr 1fr;gap:22px}}
+
+  section.block{padding:64px 0}
+  .knum{font-family:'Newsreader',serif;font-size:14px;color:var(--accent);font-weight:500;letter-spacing:.04em;margin-bottom:14px}
+  h2.h{font-family:'Newsreader',serif;font-weight:380;font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;line-height:1.08;margin-bottom:26px}
+  p.t{font-size:18px;color:var(--ink-soft);margin-bottom:20px;max-width:68ch}
+  p.t strong{color:var(--ink);font-weight:600}
+
+  .note{background:var(--paper-2);border-left:3px solid var(--accent);padding:26px 30px;margin:30px 0;border-radius:0 6px 6px 0}
+  .note .lbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .note p{font-size:16.5px;color:var(--ink-soft);margin:0;max-width:none}
+
+  .hill{margin:46px 0;padding:42px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+  .hill .lbl{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+  .hill blockquote{font-family:'Newsreader',serif;font-style:italic;font-weight:340;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.3;letter-spacing:-.01em;max-width:26ch;margin:0 auto}
+
+  .ph{background:var(--paper-2);border:1.5px dashed rgba(0,25,41,.28);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;margin:30px 0;min-height:320px}
+  .ph.tall{min-height:440px}
+  .ph .picon{font-size:26px;color:var(--accent);margin-bottom:14px}
+  .ph .plabel{font-family:'Newsreader',serif;font-size:18px;color:var(--ink);margin-bottom:6px}
+  .ph .phint{font-size:13.5px;color:var(--ink-soft);max-width:46ch}
+
+  .feat{padding:30px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+  .feat:last-of-type{border-bottom:1px solid var(--line)}
+  .feat .fn{font-family:'Newsreader',serif;font-size:15px;color:var(--accent);padding-top:4px}
+  .feat h4{font-family:'Newsreader',serif;font-weight:440;font-size:1.35rem;letter-spacing:-.01em;margin-bottom:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .feat p{font-size:16.5px;color:var(--ink-soft);max-width:64ch}
+  .owned{font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--paper);padding:4px 10px;border-radius:100px;font-family:'Hanken Grotesk',sans-serif;font-weight:600}
+
+  .steps{list-style:none;counter-reset:s;margin:26px 0}
+  .steps li{counter-increment:s;padding:14px 0 14px 46px;border-bottom:1px solid var(--line);position:relative;font-size:16.5px;color:var(--ink-soft);max-width:70ch}
+  .steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:14px;font-family:'Newsreader',serif;font-size:14px;color:var(--accent)}
+
+  .snapshot{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0}
+  .stat{background:var(--paper-2);border-radius:8px;padding:28px 24px;text-align:left}
+  .stat .statnum{font-family:'Newsreader',serif;font-weight:360;font-size:clamp(2.1rem,4.5vw,3rem);line-height:1;letter-spacing:-.02em;margin-bottom:10px}
+  .stat .statnum em{font-style:normal;color:var(--accent)}
+  .stat .statlabel{font-size:14px;color:var(--ink-soft);line-height:1.4}
+  @media(max-width:760px){.snapshot{grid-template-columns:1fr}}
+
+  .nextcta{padding:90px 0;text-align:center;background:var(--paper-2);margin-top:40px}
+  .nextcta .small{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:22px}
+  .nextcta a{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(2rem,6vw,3.6rem);color:var(--ink);text-decoration:none;transition:color .4s}
+  .nextcta a:hover{color:var(--accent)}
+  footer{padding:30px 0;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:10px}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Grace Lee</a>
+  <a class="back" href="index.html">← All work</a>
+</nav>
+
+<section class="cs-hero">
+  <div class="wrap">
+    <div class="eyebrow">Case study — Enterprise / PLG</div>
+    <h1>watsonx.data</h1>
+    <p class="deck">Redesigning the first-run experience for an open data lakehouse — turning a slow, multi-screen provisioning flow into something a prospect can get through in about a minute.</p>
+
+    <div class="meta">
+      <div><div class="k">Role</div><div class="v">UX designer · PLG focus</div></div>
+      <div><div class="k">Timeline</div><div class="v">2023 GA → 2025 redesign</div></div>
+      <div><div class="k">Surface</div><div class="v">Sign-up &amp; provisioning</div></div>
+      <div><div class="k">Outcome</div><div class="v">320× signup growth</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">01 — Context</div>
+    <h2 class="h reveal">What is watsonx.data?</h2>
+    <p class="t reveal">watsonx.data is IBM's open data lakehouse — part of the watsonx family alongside <strong>watsonx.ai</strong> and <strong>watsonx.gov</strong>, under Data &amp; AI. It's built to scale workloads and analytics across all your data, wherever it lives.</p>
+    <div class="note reveal">
+      <div class="lbl">In plain terms</div>
+      <p>A data lake stores raw, diverse data cheaply. A data warehouse keeps structured data fast and report-ready. A lakehouse is the hybrid — the flexibility of a lake with the performance of a warehouse, so teams can query data where it sits.</p>
+    </div>
+    <p class="t reveal">It lives in IBM's Hybrid Data Management portfolio, and my focus there was product-led growth — the experience a prospect has when they first try the product, on their own, without a sales call.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">02 — The user</div>
+    <h2 class="h reveal">Meet Sue, a data engineer</h2>
+    <p class="t reveal">Data engineers make sure data is accessible to the right people in the right place — moving data to a central location, providing high-quality transformed data for business use, and keeping governance intact along the way.</p>
+    <p class="t reveal">People like Sue need somewhere to actually work with all that data — a lake, a warehouse, or a lakehouse. watsonx.data is meant to be that place. But first, she has to get in the door.</p>
+    <div class="ph reveal">
+      <div class="picon">◳</div>
+      <div class="plabel">Persona: "Sue, the data engineer"</div>
+      <div class="phint">Drop in your Sue persona artboard and the data lake / warehouse / lakehouse explainer here.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">03 — The problem</div>
+    <h2 class="h reveal">Getting in the door was the wall</h2>
+    <p class="t reveal">Before Sue could do anything useful, simply getting watsonx.data provisioned was a slog. The path wound through the marketing site, account creation, the IBM Cloud console, a catalog search, a plan picker, and a resource list — then ended in a long wait.</p>
+    <ol class="steps reveal">
+      <li>Start on the watsonx.data marketing page, click "Start a free trial."</li>
+      <li>Log in or create an IBMid.</li>
+      <li>Land in the IBM Cloud console and "create a resource."</li>
+      <li>Search the IBM Cloud catalog for watsonx.data.</li>
+      <li>Select the Lite plan and kick off provisioning.</li>
+      <li>Hunt through the resource list — expanding "Databases" — to find the instance.</li>
+      <li>Open watsonx.data and step through a configuration wizard.</li>
+      <li>Wait — provisioning could take up to 15 minutes, watching a progress bar.</li>
+    </ol>
+    <p class="t reveal">All told: roughly <strong>10 screens and 9 clicks</strong> before the product did anything, capped by a <strong>15-minute provisioning wait staring at a blank loading screen</strong>. For a self-serve trial, that's where prospects quietly give up.</p>
+    <div class="ph reveal">
+      <div class="picon">◳</div>
+      <div class="plabel">The "as-is" flow</div>
+      <div class="phint">Add your as-is walkthrough screens — marketing page through the 15-minute provisioning bar.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">04 — The goal</div>
+    <h2 class="h reveal">Our problem statement</h2>
+    <div class="hill reveal">
+      <div class="lbl">The problem</div>
+      <blockquote>"There are too many screens to provision watsonx.data. Simplify the path and cut provisioning from 15 minutes to 1."</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">05 — The solution</div>
+    <h2 class="h reveal">What changed in the to-be</h2>
+    <p class="t reveal">The redesign collapsed the path and removed the dead time — and where waiting was unavoidable, it turned that wait into something useful.</p>
+
+    <div class="feat reveal">
+      <div class="fn">01</div>
+      <div>
+        <h4>One provisioning page, with a use case</h4>
+        <p>Instead of scattering setup across the console and catalog, a single provisioning page lets the prospect pick a use case (like data engineering) that bundles the right engines for them. Choosing the use case up front is the key lever that cuts the bulk of the provisioning time.</p>
+      </div>
+    </div>
+
+    <div class="feat reveal">
+      <div class="fn">02</div>
+      <div>
+        <h4>Consistent across watsonx</h4>
+        <p>The same provisioning page is shared by watsonx.ai and watsonx.gov, so the experience is consistent across the whole watsonx family — and a prospect who knows one knows them all.</p>
+      </div>
+    </div>
+
+    <div class="feat reveal">
+      <div class="fn">03</div>
+      <div>
+        <h4>No more blank-screen wait</h4>
+        <p>When provisioning does take a moment, an educational "preparing your journey" screen teaches key parts of the lakehouse while the user waits — turning dead time into onboarding instead of a frozen progress bar.</p>
+      </div>
+    </div>
+
+    <div class="feat reveal">
+      <div class="fn">04</div>
+      <div>
+        <h4>A welcome, not an empty room</h4>
+        <p>Rather than dropping the user into a bare console, a welcome modal offers two doors: take a quick product tour, or jump straight into sample data and start working.</p>
+      </div>
+    </div>
+
+    <div class="ph tall reveal">
+      <div class="picon">◳</div>
+      <div class="plabel">The "to-be" screens</div>
+      <div class="phint">Add your to-be designs — the provisioning page with use-case selection, the educational loading screen, and the welcome modal.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">06 — Impact</div>
+    <h2 class="h reveal">The numbers that moved</h2>
+    <p class="t reveal">A faster, simpler first run didn't just feel better — it showed up in the funnel.</p>
+
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:8px 0 16px;" class="reveal">Business outcomes</div>
+    <div class="snapshot reveal">
+      <div class="stat"><div class="statnum"><em>320×</em></div><div class="statlabel">Signup volume — from ~33 to a peak of 10,558 monthly signups</div></div>
+      <div class="stat"><div class="statnum">6.28<em>%</em></div><div class="statlabel">Signup rate — +57% over IBM's 4% benchmark</div></div>
+      <div class="stat"><div class="statnum">55<em>%</em></div><div class="statlabel">Trial conversion — +83% over IBM's 30% benchmark</div></div>
+    </div>
+
+    <p class="t reveal">Underneath those outcomes, the redesign made the path itself dramatically shorter:</p>
+
+    <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:8px 0 16px;" class="reveal">Efficiency gains</div>
+    <div class="snapshot reveal">
+      <div class="stat"><div class="statnum">10 → <em>5</em></div><div class="statlabel">Screens to provision, cut in half (−50%)</div></div>
+      <div class="stat"><div class="statnum">9 → <em>3</em></div><div class="statlabel">Clicks to reach the console (−67%)</div></div>
+      <div class="stat"><div class="statnum">15m → <em>~1m</em></div><div class="statlabel">Provisioning time, no blank-screen wait</div></div>
+    </div>
+
+    <p class="t reveal">Beyond the numbers, the work delivered a better getting-started experience inside the console and tighter consistency across the watsonx products.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">07 — Reflection</div>
+    <h2 class="h reveal">Good design is invisible</h2>
+    <p class="t reveal">No user ever needs to see the behind-the-scenes of design. Underneath this simple flow sat detailed user-flow charts to capture the architecture's nuances, careful design handoff to development, and playback to leadership to keep everyone aligned.</p>
+    <p class="t reveal">At the core, I'm a designer who cares about the humane side of both the process and the result — and about a safe environment for the team doing the work.</p>
+  </div>
+</section>
+
+<div class="nextcta">
+  <div class="wrap">
+    <div class="small">Like what you see?</div>
+    <a href="index.html#contact">Get in touch →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2025 Grace Lee</span>
+    <span><a href="index.html" style="color:inherit;text-decoration:none">← Back to all work</a></span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

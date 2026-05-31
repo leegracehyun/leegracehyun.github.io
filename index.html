@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grace Lee — Product &amp; UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#eaf3ef;
+    --paper-2:#dde9e4;
+    --ink:#001929;
+    --ink-soft:#44555e;
+    --accent:#0fae84;
+    --accent-deep:#0a8568;
+    --line:rgba(0,25,41,.14);
+    --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Hanken Grotesk',sans-serif;
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--accent);color:var(--paper)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px 32px;mix-blend-mode:difference;color:#fff;
+  }
+  nav .logo{font-family:'Newsreader',serif;font-weight:600;font-size:19px;letter-spacing:-.01em;text-decoration:none;color:inherit}
+  nav .links{display:flex;gap:30px}
+  nav a{color:inherit;text-decoration:none;font-size:14px;letter-spacing:.02em;position:relative}
+  nav a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:1px;background:currentColor;transition:width .35s ease}
+  nav a:hover::after{width:100%}
+  @media(max-width:640px){nav .links{display:none}}
+
+  header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 0 60px;position:relative}
+  .eyebrow{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:34px;display:flex;align-items:center;gap:14px}
+  .eyebrow::before{content:"";width:42px;height:1px;background:var(--accent)}
+  h1{font-family:'Newsreader',serif;font-weight:340;font-size:clamp(3.2rem,11vw,9.5rem);line-height:.92;letter-spacing:-.025em}
+  h1 em{font-style:italic;color:var(--accent);font-weight:400}
+  .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:54px;gap:40px;flex-wrap:wrap}
+  .hero-foot p{max-width:460px;font-size:18px;color:var(--ink-soft);line-height:1.6}
+  .scrollhint{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  header .reveal:nth-child(1){transition-delay:.05s}
+  header .reveal:nth-child(2){transition-delay:.18s}
+  header .reveal:nth-child(3){transition-delay:.34s}
+
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:54px}
+  .sec-head .num{font-family:'Newsreader',serif;font-size:15px;color:var(--accent);font-weight:500}
+  .sec-head h2{font-family:'Newsreader',serif;font-weight:380;font-size:clamp(1.9rem,4vw,2.9rem);letter-spacing:-.02em;line-height:1}
+
+  #work{padding:110px 0}
+  .project{display:grid;grid-template-columns:64px 1fr auto;gap:30px;align-items:center;padding:38px 0;border-top:1px solid var(--line);text-decoration:none;color:inherit;position:relative;transition:padding .5s cubic-bezier(.16,1,.3,1)}
+  .project:last-child{border-bottom:1px solid var(--line)}
+  .project .pnum{font-family:'Newsreader',serif;font-size:15px;color:var(--ink-soft);transition:color .4s}
+  .project .ptitle{font-family:'Newsreader',serif;font-weight:380;font-size:clamp(1.7rem,4.2vw,3.1rem);letter-spacing:-.02em;line-height:1.04;transition:transform .5s cubic-bezier(.16,1,.3,1),color .4s}
+  .project .pmeta{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;max-width:300px}
+  .tag{font-size:12.5px;letter-spacing:.04em;color:var(--ink-soft);border:1px solid var(--line);padding:5px 13px;border-radius:100px;white-space:nowrap}
+  .project:hover{padding-left:24px}
+  .project:hover .ptitle{transform:translateX(8px);color:var(--accent)}
+  .project:hover .pnum{color:var(--accent)}
+  .project.placeholder .ptitle{color:var(--ink-soft);font-style:italic;font-weight:300}
+  .project.placeholder{opacity:.7}
+  @media(max-width:760px){
+    .project{grid-template-columns:1fr;gap:14px;padding:30px 0}
+    .project .pmeta{justify-content:flex-start;max-width:none}
+    .project:hover{padding-left:0}
+  }
+
+  #about{padding:110px 0;background:var(--paper-2)}
+  #about .inner{display:grid;grid-template-columns:1fr 1.15fr;gap:70px}
+  #about .lead{font-family:'Newsreader',serif;font-weight:340;font-size:clamp(1.5rem,2.8vw,2.15rem);line-height:1.32;letter-spacing:-.015em}
+  #about .lead em{font-style:italic;color:var(--accent)}
+  #about .body p{color:var(--ink-soft);font-size:17px;margin-bottom:18px;max-width:48ch}
+  .capset{margin-top:34px;display:flex;flex-wrap:wrap;gap:8px}
+  .cap{font-size:13px;letter-spacing:.04em;border:1px solid var(--line);padding:7px 14px;border-radius:100px}
+  @media(max-width:760px){#about .inner{grid-template-columns:1fr;gap:36px}}
+
+  #contact{padding:130px 0 90px;text-align:center}
+  #contact .small{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:28px}
+  #contact a.big{font-family:'Newsreader',serif;font-weight:340;font-style:italic;font-size:clamp(2.2rem,8vw,5.8rem);letter-spacing:-.02em;line-height:1;color:var(--ink);text-decoration:none;display:inline-block;transition:color .4s}
+  #contact a.big:hover{color:var(--accent)}
+  .socials{display:flex;gap:28px;justify-content:center;margin-top:50px;flex-wrap:wrap}
+  .socials a{color:var(--ink-soft);text-decoration:none;font-size:14px;letter-spacing:.03em;transition:color .3s}
+  .socials a:hover{color:var(--accent)}
+
+  footer{padding:30px 0;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Grace Lee</a>
+  <div class="links">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow reveal">Product Designer · Product-led growth</div>
+    <h1 class="reveal">Designing clarity<br>into <em>complex</em><br>enterprise tools.</h1>
+    <div class="hero-foot reveal">
+      <p>I'm a product designer at IBM, where I make complex enterprise data and AI tools feel approachable. My focus is product-led growth and cross-product platform experiences — the first-run moments that turn powerful software into something people actually want to use.</p>
+      <div class="scrollhint">↓ Selected work</div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Selected work</h2>
+    </div>
+
+    <a class="project reveal" href="watsonx-data.html">
+      <span class="pnum">01</span>
+      <span class="ptitle">watsonx.data</span>
+      <span class="pmeta"><span class="tag">Enterprise</span><span class="tag">PLG</span><span class="tag">Onboarding</span><span class="tag">2023–25</span></span>
+    </a>
+
+    <a class="project reveal" href="db2-intelligence-center.html">
+      <span class="pnum">02</span>
+      <span class="ptitle">Db2 Intelligence Center</span>
+      <span class="pmeta"><span class="tag">Enterprise</span><span class="tag">AI assistant</span><span class="tag">0→GA</span><span class="tag">2024–25</span></span>
+    </a>
+
+    <a class="project reveal" href="pinnacle.html">
+      <span class="pnum">03</span>
+      <span class="ptitle">Pinnacle</span>
+      <span class="pmeta"><span class="tag">Consumer</span><span class="tag">Mobile</span><span class="tag">0→1</span><span class="tag">2020</span></span>
+    </a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap inner">
+    <div class="reveal">
+      <div class="sec-head">
+        <h2>About</h2>
+      </div>
+      <p class="lead">Nice to meet you. I'm a curious designer who believes everyone needs a little <em>color</em> in their life.</p>
+    </div>
+    <div class="body reveal">
+      <p>Three words I'd pick for myself: energetic, adaptive, and responsive. A background in graphic design and animation widens what I can put on the artboard and helps me sharpen the experience. Above all, I want people to walk away with a meaningful solution — and to actually enjoy solving their problem along the way.</p>
+      <p>I've been at IBM in Software under Data &amp; AI for over five years now (wow!) — working in enterprise design and new product development across Data Virtualization, Db2 Warehouse on Cloud, and watsonx.data. These days my focus is product-led growth and cross-product collaboration for platform experiences.</p>
+      <p>Outside of design, you'll find me dancing, dragging friends to new food spots, animating, and wholeheartedly selling my soul to YouTube — ask me for a recommendation and I'll have a channel in any field, I promise. Otherwise, I'm probably running off to my next project.</p>
+      <div class="capset">
+        <span class="cap">Product-led growth</span>
+        <span class="cap">Enterprise design</span>
+        <span class="cap">Graphic design</span>
+        <span class="cap">Animation</span>
+        <span class="cap">Prototyping</span>
+        <span class="cap">Cross-product collaboration</span>
+        <span class="cap">Figma</span>
+        <span class="cap">Illustrator</span>
+      </div>
+      <a class="resume reveal" href="resume.pdf" style="display:inline-block;margin-top:26px;font-size:15px;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:3px;">Curious for more? Here's my résumé →</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="small reveal">Let's work together</div>
+    <a class="big reveal" href="mailto:hello@gracelee.design">hello@gracelee.design</a>
+    <div class="socials reveal">
+      <a href="#">LinkedIn ↗</a>
+      <a href="#">Dribbble ↗</a>
+      <a href="#">Read.cv ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2025 Grace Lee</span>
+    <span>Designed &amp; built with care</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  window.addEventListener('load',()=>{document.querySelectorAll('header .reveal').forEach(el=>el.classList.add('in'));});
+</script>
+</body>
+</html>
