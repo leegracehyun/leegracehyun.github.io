@@ -71,6 +71,36 @@
   .split .col p{font-size:16px;color:var(--ink-soft);line-height:1.55}
   .split .col p strong{color:var(--ink);font-weight:600}
   @media(max-width:680px){.split{grid-template-columns:1fr}.split .col:first-child{border-right:none;border-bottom:1px solid var(--line)}}
+  .asis{margin:30px 0}
+  .asis .track{display:flex;gap:6px;margin-bottom:22px}
+  .asis .track .seg{flex:1;height:4px;border-radius:100px;background:var(--line);transition:background .35s}
+  .asis .track .seg.done{background:var(--accent)}
+  .asis .track .seg.now{background:var(--accent-deep)}
+  .asis .card{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:38px 36px;min-height:210px;display:flex;flex-direction:column;justify-content:center}
+  .asis .card .ico{font-size:30px;margin-bottom:16px;line-height:1}
+  .asis .card .step-k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .asis .card h4{font-family:'Newsreader',serif;font-weight:420;font-size:1.5rem;letter-spacing:-.01em;line-height:1.15;margin-bottom:12px}
+  .asis .card p{font-size:16.5px;color:var(--ink-soft);line-height:1.55;max-width:54ch}
+  .asis .ctrls{display:flex;align-items:center;justify-content:space-between;margin-top:22px;gap:16px;flex-wrap:wrap}
+  .asis .counts{font-size:14px;color:var(--ink-soft)}
+  .asis .counts strong{color:var(--ink);font-weight:600}
+  .asis .btns{display:flex;gap:10px}
+  .asis button{font-family:'Hanken Grotesk',sans-serif;font-size:14px;letter-spacing:.02em;padding:10px 20px;border-radius:100px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+  .asis button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+  .asis button.primary{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+  .asis button.primary:hover:not(:disabled){background:var(--accent-deep);border-color:var(--accent-deep);color:var(--paper)}
+  .asis button:disabled{opacity:.4;cursor:default}
+  .asis .card.wait h4{color:var(--accent-deep)}
+  .flowsum{margin:26px 0 38px;border-top:1px solid var(--line)}
+  .flowsum .sumhead{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:20px 0 4px}
+  .flowsum ol{list-style:none;counter-reset:fs;margin:0;padding:0}
+  .flowsum li{counter-increment:fs;display:grid;grid-template-columns:30px 1fr auto;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line)}
+  .flowsum li::before{content:counter(fs);font-family:'Newsreader',serif;font-size:14px;color:var(--accent);font-weight:500}
+  .flowsum li.wait::before{color:var(--accent-deep)}
+  .flowsum .fl-t{font-size:16px;color:var(--ink)}
+  .flowsum li.wait .fl-t{color:var(--accent-deep);font-weight:500}
+  .flowsum .fl-n{font-size:13px;color:var(--ink-soft);white-space:nowrap;text-align:right}
+  @media(max-width:560px){.flowsum li{grid-template-columns:24px 1fr}.flowsum .fl-n{grid-column:2;text-align:left;margin-top:2px}}
   .feat{padding:30px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
   .feat:last-of-type{border-bottom:1px solid var(--line)}
   .feat .fn{font-family:'Newsreader',serif;font-size:15px;color:var(--accent);padding-top:4px}
@@ -156,22 +186,38 @@
     <div class="knum reveal">03 · The problem</div>
     <h2 class="h reveal">Getting started had too much friction</h2>
     <p class="t reveal">Before Sue could do anything useful, simply getting watsonx.data provisioned was a slog. The path wound through the marketing site, account creation, the IBM Cloud console, a catalog search, a plan picker, and a resource list, then ended in a long wait.</p>
-    <ol class="steps reveal">
-      <li>Start on the watsonx.data marketing page, click "Start a free trial."</li>
-      <li>Log in or create an IBMid.</li>
-      <li>Land in the IBM Cloud console and "create a resource."</li>
-      <li>Search the IBM Cloud catalog for watsonx.data.</li>
-      <li>Select the Lite plan and kick off provisioning.</li>
-      <li>Hunt through the resource list, expanding "Databases," to find the instance.</li>
-      <li>Open watsonx.data and step through a configuration wizard.</li>
-      <li>Wait. Provisioning could take up to 15 minutes, watching a progress bar.</li>
-    </ol>
-    <p class="t reveal">All told: roughly <strong>10 screens and 9 clicks</strong> before the product did anything, capped by a <strong>15-minute provisioning wait staring at a blank loading screen</strong>. For a self-serve trial, that's where users quietly give up.</p>
-    <div class="ph reveal">
-      <div class="picon">◳</div>
-      <div class="plabel">The "as-is" flow</div>
-      <div class="phint">Add your as-is walkthrough screens, from the marketing page through the 15-minute provisioning bar.</div>
+    <div class="asis reveal" id="asis">
+      <div class="track" id="asisTrack"></div>
+      <div class="card" id="asisCard">
+        <div class="ico" id="asisIco"></div>
+        <div class="step-k" id="asisK"></div>
+        <h4 id="asisTitle"></h4>
+        <p id="asisDetail"></p>
+      </div>
+      <div class="ctrls">
+        <div class="counts">Running total: <strong id="asisScreens">1</strong> screens · <strong id="asisClicks">0</strong> clicks · <strong id="asisTime">~0 min</strong></div>
+        <div class="btns">
+          <button id="asisBack" disabled>← Back</button>
+          <button id="asisNext" class="primary">Next →</button>
+        </div>
+      </div>
     </div>
+
+    <div class="flowsum reveal">
+      <div class="sumhead">The whole flow, at a glance</div>
+      <ol>
+        <li><span class="fl-t">Marketing page, click "Start a free trial"</span><span class="fl-n">1 screen · 1 click</span></li>
+        <li><span class="fl-t">Log in or create an IBMid</span><span class="fl-n">2 screens · 2 clicks</span></li>
+        <li><span class="fl-t">IBM Cloud console, "create a resource"</span><span class="fl-n">3 screens · 3 clicks</span></li>
+        <li><span class="fl-t">Search the catalog for watsonx.data</span><span class="fl-n">5 screens · 5 clicks</span></li>
+        <li><span class="fl-t">Pick the Lite plan, kick off provisioning</span><span class="fl-n">6 screens · 6 clicks</span></li>
+        <li><span class="fl-t">Hunt the resource list for the instance</span><span class="fl-n">8 screens · 8 clicks</span></li>
+        <li><span class="fl-t">Step through a configuration wizard</span><span class="fl-n">9 screens · 9 clicks</span></li>
+        <li class="wait"><span class="fl-t">Wait at a blank progress bar</span><span class="fl-n">10 screens · up to 15 min</span></li>
+      </ol>
+    </div>
+
+    <p class="t reveal">All told: roughly <strong>10 screens and 9 clicks</strong> before the product did anything, capped by a <strong>15-minute provisioning wait staring at a blank loading screen</strong>. For a self-serve trial, that's where users quietly give up.</p>
   </div>
 </section>
 
@@ -316,6 +362,44 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  (function(){
+    const steps = [
+      {ico:"🌐", k:"Step 1 · Marketing site", t:"Start a free trial", d:"Land on the watsonx.data marketing page and click \u201cStart a free trial.\u201d", screens:1, clicks:1, mins:0},
+      {ico:"🔑", k:"Step 2 · Account", t:"Log in or create an IBMid", d:"Authenticate, or create a brand-new IBMid before going any further.", screens:2, clicks:2, mins:1},
+      {ico:"🗂️", k:"Step 3 · Cloud console", t:"Create a resource", d:"Land in the IBM Cloud console and choose to \u201ccreate a resource.\u201d", screens:3, clicks:3, mins:1},
+      {ico:"🔎", k:"Step 4 · Catalog", t:"Search the catalog", d:"Hunt through the IBM Cloud catalog to find watsonx.data among everything else.", screens:5, clicks:5, mins:2},
+      {ico:"💲", k:"Step 5 · Plan", t:"Pick a plan, kick off provisioning", d:"Select the Lite plan and start provisioning the instance.", screens:6, clicks:6, mins:2},
+      {ico:"📋", k:"Step 6 · Resource list", t:"Find the instance", d:"Dig through the resource list, expanding \u201cDatabases,\u201d to locate what you just created.", screens:8, clicks:8, mins:3},
+      {ico:"⚙️", k:"Step 7 · Configuration", t:"Step through the wizard", d:"Open watsonx.data and work through a multi-step configuration wizard.", screens:9, clicks:9, mins:3},
+      {ico:"⏳", k:"Step 8 · The wait", t:"Stare at a progress bar", d:"Provisioning could take up to 15 minutes, with nothing to do but watch a blank loading screen.", screens:10, clicks:9, mins:15, wait:true}
+    ];
+    let i = 0;
+    const $ = id => document.getElementById(id);
+    const track = $("asisTrack"), card = $("asisCard");
+    steps.forEach((_,n)=>{ const s=document.createElement("div"); s.className="seg"; track.appendChild(s); });
+    const segs = track.children;
+    function fmtTime(m){ return m===0 ? "~0 min" : (m>=15 ? "up to 15 min" : "~"+m+" min"); }
+    function render(){
+      const s = steps[i];
+      $("asisIco").textContent = s.ico;
+      $("asisK").textContent = s.k;
+      $("asisTitle").textContent = s.t;
+      $("asisDetail").textContent = s.d;
+      card.classList.toggle("wait", !!s.wait);
+      $("asisScreens").textContent = s.screens;
+      $("asisClicks").textContent = s.clicks;
+      $("asisTime").textContent = fmtTime(s.mins);
+      for(let n=0;n<segs.length;n++){
+        segs[n].className = "seg" + (n<i?" done":n===i?" now":"");
+      }
+      $("asisBack").disabled = i===0;
+      $("asisNext").textContent = i===steps.length-1 ? "Start over" : "Next →";
+    }
+    $("asisNext").addEventListener("click", ()=>{ i = (i===steps.length-1) ? 0 : i+1; render(); });
+    $("asisBack").addEventListener("click", ()=>{ if(i>0){ i--; render(); } });
+    render();
+  })();
 </script>
 </body>
 </html>
