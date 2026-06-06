@@ -63,6 +63,14 @@
     .sue-row .sue-img img{max-width:300px;margin:0 auto}
   }
 
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:36px 0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .split .col{padding:30px 32px}
+  .split .col:first-child{border-right:1px solid var(--line);background:var(--paper-2)}
+  .split .col .tag2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-weight:500}
+  .split .col h4{font-family:'Newsreader',serif;font-weight:420;font-size:1.3rem;letter-spacing:-.01em;margin-bottom:12px;line-height:1.15}
+  .split .col p{font-size:16px;color:var(--ink-soft);line-height:1.55}
+  .split .col p strong{color:var(--ink);font-weight:600}
+  @media(max-width:680px){.split{grid-template-columns:1fr}.split .col:first-child{border-right:none;border-bottom:1px solid var(--line)}}
   .feat{padding:30px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
   .feat:last-of-type{border-bottom:1px solid var(--line)}
   .feat .fn{font-family:'Newsreader',serif;font-size:15px;color:var(--accent);padding-top:4px}
@@ -146,7 +154,7 @@
 <section class="block">
   <div class="wrap">
     <div class="knum reveal">03 · The problem</div>
-    <h2 class="h reveal">Getting in the door was the wall</h2>
+    <h2 class="h reveal">Getting started had too much friction</h2>
     <p class="t reveal">Before Sue could do anything useful, simply getting watsonx.data provisioned was a slog. The path wound through the marketing site, account creation, the IBM Cloud console, a catalog search, a plan picker, and a resource list, then ended in a long wait.</p>
     <ol class="steps reveal">
       <li>Start on the watsonx.data marketing page, click "Start a free trial."</li>
@@ -192,6 +200,11 @@
       </div>
     </div>
 
+    <div class="note reveal">
+      <div class="lbl">In plain terms</div>
+      <p>An "engine" is the compute that actually runs the work, the thing that queries and processes the data. Different jobs want different engines, which is exactly the choice we wanted to make easy.</p>
+    </div>
+
     <div class="feat reveal">
       <div class="fn">02</div>
       <div>
@@ -226,7 +239,32 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">06 · Impact</div>
+    <div class="knum reveal">06 · Trial vs. paid</div>
+    <h2 class="h reveal">One product, two starting problems</h2>
+    <p class="t reveal">One thing I learned over two years on this: the trial and paid experiences aren't the same problem. In a trial, nobody's committed yet, so every extra step is a reason to leave, and friction is the enemy. In the paid experience the user is being billed, so the goal flips. Now they want control over what they're spinning up and paying for. Same product, opposite priorities.</p>
+    <div class="split reveal">
+      <div class="col">
+        <div class="tag2">Trial</div>
+        <h4>Remove every decision we can</h4>
+        <p>We provision a sensible set of engines automatically. This moved past even the use-case selection in the original redesign, since the fastest path is no setup at all. A trial user lands in a working environment and can start exploring right away.</p>
+      </div>
+      <div class="col">
+        <div class="tag2">Paid</div>
+        <h4>Give the user the wheel</h4>
+        <p>Because they'll be billed, the user picks a use case and we provision the recommended engines for them. The old Quick Start wizard dropped from <strong>five steps to two</strong>, and the homepage now makes the right first step obvious, with a path to learn the tools for anyone using them for the first time.</p>
+      </div>
+    </div>
+    <div class="ph reveal">
+      <div class="picon">◳</div>
+      <div class="plabel">Quick Start: 5 steps → 2</div>
+      <div class="phint">Add your before/after of the Quick Start wizard, plus the improved homepage affordances for the first step.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="knum reveal">07 · Impact</div>
     <h2 class="h reveal">The numbers that moved</h2>
     <p class="t reveal">A faster, simpler first run didn't just feel better. It showed up in the funnel.</p>
 
@@ -252,7 +290,7 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">07 · Reflection</div>
+    <div class="knum reveal">08 · Reflection</div>
     <h2 class="h reveal">Good design is invisible</h2>
     <p class="t reveal">No user ever needs to see the behind-the-scenes of design. Underneath this simple flow sat detailed user-flow charts to capture the architecture's nuances, careful design handoff to development, and playback to leadership to keep everyone aligned.</p>
     <p class="t reveal">At the core, I'm a designer who cares about the humane side of both the process and the result, and a safe environment for the team doing the work.</p>
