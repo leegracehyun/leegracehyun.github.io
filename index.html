@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grace Lee — Product &amp; UX Designer</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M16%201%20C17%209%2019%2013%2031%2016%20C19%2019%2017%2023%2016%2031%20C15%2023%2013%2019%201%2016%20C13%2013%2015%209%2016%201%20Z%22%20fill%3D%22%232ea58c%22%2F%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,7 +29,9 @@
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
+    cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%3Cpath%20d%3D%22M13%203%20C13.7%208.5%2014.8%2010.5%2022.5%2013%20C14.8%2015.5%2013.7%2017.5%2013%2023%20C12.3%2017.5%2011.2%2015.5%203.5%2013%20C11.2%2010.5%2012.3%208.5%2013%203%20Z%22%20fill%3D%22%232ea58c%22%20stroke%3D%22%23001929%22%20stroke-width%3D%220.6%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M23%202%20C23.3%204.6%2023.8%205.5%2026.5%206.5%20C23.8%207.5%2023.3%208.4%2023%2011%20C22.7%208.4%2022.2%207.5%2019.5%206.5%20C22.2%205.5%2022.7%204.6%2023%202%20Z%22%20fill%3D%22%231e8a73%22%20stroke%3D%22%23001929%22%20stroke-width%3D%220.5%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") 13 13, auto;
   }
+  a, button, .project, .dock a, nav a, .mw-card{cursor:pointer}
   body::before{
     content:"";
     position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;
@@ -90,7 +93,7 @@
   #about .inner{display:grid;grid-template-columns:1fr 1.15fr;gap:70px}
   #about .lead{font-family:'Newsreader',serif;font-weight:340;font-size:clamp(1.5rem,2.8vw,2.15rem);line-height:1.32;letter-spacing:-.015em}
   #about .lead em{font-style:italic;color:var(--accent)}
-  #about .about-img{margin-top:34px;border:1px dashed var(--line);border-radius:12px;background:var(--paper);aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;gap:10px}
+  #about .about-img{margin-top:34px;border-radius:12px;overflow:hidden;aspect-ratio:4/5}
   #about .about-img .picon{font-size:30px;color:var(--accent);line-height:1}
   #about .about-img .plabel{font-family:'Newsreader',serif;font-size:18px;color:var(--ink)}
   #about .about-img .phint{font-size:13.5px;color:var(--ink-soft);max-width:30ch}
