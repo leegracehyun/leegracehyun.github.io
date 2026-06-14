@@ -88,9 +88,9 @@
   .concept-shots{display:flex;flex-direction:column;gap:30px;margin:30px 0}
   .concept-shots .shotlbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
   .concept-shots .shot .ph{min-height:300px;margin:0}
-  .concept-shots .shot img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line)}
-  .figimg{margin:30px 0;border-radius:8px;overflow:hidden}
-  .figimg img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line)}
+  .concept-shots .shot img{width:100%;height:auto;display:block;border-radius:8px}
+  .figimg{margin:18px 0 0;border-radius:8px;overflow:hidden}
+  .figimg img{width:100%;height:auto;display:block;border-radius:8px}
   @media(max-width:760px){.persona-row{grid-template-columns:1fr!important;gap:24px!important;}}
 
   .findings{list-style:none;margin:24px 0}
@@ -162,7 +162,7 @@
   <div class="wrap">
     <div class="knum reveal">01 · Context</div>
     <h2 class="h reveal">What is Db2, and what were we building?</h2>
-    <p class="t reveal">Db2 is a relational database management system: an organized, secure digital filing system for very large amounts of data. It's really a family of data-management products, from an analytics warehouse to monitoring tools.</p>
+    <p class="t reveal">Db2 is a relational database management system: <strong>an organized, secure digital filing system for very large amounts of data</strong>. It's really a family of data-management products, from an analytics warehouse to monitoring tools.</p>
     <div class="note reveal">
       <div class="lbl">In plain terms</div>
       <p>If you've never touched a database: think of Db2 as a massive, high-security filing system that companies trust to never break, never lose data, and never slow down. Database administrators are the people who keep it that way.</p>
@@ -186,7 +186,7 @@
   <div class="wrap">
     <div class="knum reveal">03 · The problem</div>
     <h2 class="h reveal">Where the current experience was breaking down</h2>
-    <p class="t reveal">To design for Bob, we first had to understand which of his jobs-to-be-done actually needed relief. In a workshop in April 2024 we gathered pain points from real DBAs and grouped them into themes.</p>
+    <p class="t reveal">To design for Bob, we first had to understand <strong>which of his jobs-to-be-done actually needed relief</strong>. In a workshop in April 2024 we gathered pain points from real DBAs and grouped them into themes.</p>
     <div class="figimg reveal">
       <img src="images/db2painpoints.png" alt="Affinity-mapped pain points from the DBA workshop">
     </div>
@@ -209,7 +209,7 @@
   <div class="wrap">
     <div class="knum reveal">05 · Planning</div>
     <h2 class="h reveal">Roadmap: the cake method</h2>
-    <p class="t reveal">Working closely with PM, we drafted a roadmap and used the cake method to decide what design would tackle, and when.</p>
+    <p class="t reveal">Working closely with PM, we drafted a roadmap and used <strong>the cake method to decide what design would tackle, and when</strong>.</p>
     <div class="cake reveal">
       <div class="c"><div class="ct">🧁 Cupcake</div><div class="cd"><ul><li>Simple documentation requests</li><li>Able to answer questions about my version of Db2</li></ul></div></div>
       <div class="c"><div class="ct">🎂 Birthday cake</div><div class="cd"><ul><li>Set up alerts and notifications</li><li>Third-party integration (e.g. Slack, GitHub)</li></ul></div></div>
@@ -222,7 +222,7 @@
   <div class="wrap">
     <div class="knum reveal">06 · Design concepts</div>
     <h2 class="h reveal">The features we shaped</h2>
-    <p class="t reveal">From the requirements, we settled on five core capabilities. The two I owned end to end are marked.</p>
+    <p class="t reveal">From the requirements, we settled on <strong>five core capabilities</strong>. The two I owned end to end are marked.</p>
 
     <div class="feat reveal">
       <div class="fn">01</div>
@@ -289,7 +289,7 @@
   <div class="wrap">
     <div class="knum reveal">07 · Validation</div>
     <h2 class="h reveal">Usability testing, at scale</h2>
-    <p class="t reveal">Throughout the project we ran biweekly feedback sessions with members of Db2's technical advisory board, users who know the product inside out. But we wanted to validate at a larger scale.</p>
+    <p class="t reveal">Throughout the project we ran <strong>biweekly feedback sessions with members of Db2's technical advisory board</strong>, users who know the product inside out. But we wanted to validate at a larger scale.</p>
     <p class="t reveal">Db2 has a famously loyal community, and every year they gather at <strong>IDUG</strong> (the International Db2 User Group, owned by the users, not IBM). With IDUG EMEA in Valencia, Spain around the corner, I represented design to test our work. That meant building a prototype in a week, which my team and I pulled off in time for testing.</p>
     <div class="figimg reveal">
       <img src="images/db2validation.png" alt="Testing at IDUG Valencia">
@@ -301,7 +301,7 @@
   <div class="wrap">
     <div class="knum reveal">08 · Findings</div>
     <h2 class="h reveal">What participants told us: the data workbench</h2>
-    <p class="t reveal">Participants appreciated the clean, efficient layout and the logical order of information. The feedback that shaped our next iterations:</p>
+    <p class="t reveal">Participants appreciated <strong>the clean, efficient layout and the logical order of information</strong>. The feedback that shaped our next iterations:</p>
     <ul class="findings reveal">
       <li>Modular design, with the ability to expand original SQL and optimized indexes, was seen as critical.</li>
       <li>Requests for parametric markers within SQL statements.</li>
@@ -317,7 +317,7 @@
     <div class="knum reveal">09 · Reflection</div>
     <h2 class="h reveal">A question that will shape what's next</h2>
     <p class="t reveal">Across conversations with customers and the product team, one question kept rising to the top: <strong>how do we build a product whose core audience is getting older, while also making it accessible to a younger, newer generation of DBAs?</strong></p>
-    <p class="t reveal">Db2's primary users are senior DBAs, and they're the first to worry about the next generation: how to onboard junior DBAs and help them get familiar with the product. That points toward developer editions and pricing plans accessible to a far wider audience.</p>
+    <p class="t reveal">Db2's primary users are senior DBAs, and they're the first to worry about <strong>the next generation: how to onboard junior DBAs</strong> and help them get familiar with the product. That points toward developer editions and pricing plans accessible to a far wider audience.</p>
   </div>
 </section>
 
@@ -325,8 +325,8 @@
   <div class="wrap">
     <div class="knum reveal">10 · Outcome</div>
     <h2 class="h reveal">Launch &amp; reception</h2>
-    <p class="t reveal">I returned the following year to IDUG NA in Atlanta, this time as Db2 Intelligence Center reached general availability. We received widespread acclaim for the look of the product and, most importantly, its intuitive experience, validating exactly what we'd seen in testing in Valencia.</p>
-    <p class="t reveal">This product was made with care, from daily evening working sessions with our development team in India to design reviews with PM during the day. We worked around the clock as a team. Db2 has a special place in my heart, and I'm honored to have been part of its debut.</p>
+    <p class="t reveal">I returned the following year to IDUG NA in Atlanta, this time as <strong>Db2 Intelligence Center reached general availability</strong>. We received widespread acclaim for the look of the product and, most importantly, its intuitive experience, validating exactly what we'd seen in testing in Valencia.</p>
+    <p class="t reveal">This product was made with care, <strong>from daily evening working sessions with our development team in India to design reviews with PM during the day</strong>. We worked around the clock as a team. Db2 has a special place in my heart, and I'm honored to have been part of its debut.</p>
   </div>
 </section>
 
