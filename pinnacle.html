@@ -71,6 +71,10 @@
   .prob-row .prob-img img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}
   @media(max-width:760px){.prob-row{grid-template-columns:1fr;gap:20px}.prob-row .prob-img{min-height:200px}}
   .videowrap{margin:30px 0}
+  .sol-row{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start;margin-top:10px}
+  .sol-row .sol-feats .feat:first-child{border-top:none;padding-top:0}
+  .sol-row .videowrap{margin:0;position:sticky;top:30px}
+  @media(max-width:860px){.sol-row{grid-template-columns:1fr;gap:24px}.sol-row .videowrap{position:static;margin-top:10px}.sol-row .sol-feats .feat:first-child{border-top:1px solid var(--line);padding-top:30px}}
   .videowrap .vlabel{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
   .videowrap .vframe{position:relative;width:100%;max-width:340px;margin:0 auto;aspect-ratio:9/16;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--ink)}
   .videowrap .vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
@@ -96,6 +100,35 @@
   .stat .statnum em{font-style:normal;color:var(--accent)}
   .stat .statlabel{font-size:14px;color:var(--ink-soft);line-height:1.4}
   @media(max-width:760px){.snapshot{grid-template-columns:1fr}}
+  /* process subsections */
+  .subsec{padding:34px 0;border-top:1px solid var(--line)}
+  .subsec .sublbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .subsec h4{font-family:'Newsreader',serif;font-weight:440;font-size:1.45rem;letter-spacing:-.01em;margin-bottom:10px}
+  .subsec p{font-size:16px;color:var(--ink-soft);line-height:1.55;max-width:64ch;margin-bottom:6px}
+  .subsec .figimg{margin:22px 0 0}
+  .subsec .figimg .ph, .subsec .stackimg .ph{min-height:240px;margin:0}
+  .subsec .stackimg{display:flex;flex-direction:column;gap:16px;margin-top:22px}
+  .subsec .stackimg img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line)}
+  /* filmstrip carousel */
+  .strip{margin:24px 0}
+  .strip .strip-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+  .strip .strip-title{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .strip .strip-btns{display:flex;gap:8px}
+  .strip .strip-btns button{width:38px;height:38px;border-radius:100px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:15px;cursor:pointer;transition:background .25s,color .25s,border-color .25s;display:flex;align-items:center;justify-content:center}
+  .strip .strip-btns button:hover{border-color:var(--accent);color:var(--accent)}
+  .strip .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+  .strip .rail::-webkit-scrollbar{height:6px}
+  .strip .rail::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+  .strip .rail .frame{flex:0 0 auto;width:228px;scroll-snap-align:start;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--paper-2)}
+  .strip .rail .frame img{width:100%;height:auto;display:block}
+  .strip .strip-hint{font-size:13px;color:var(--ink-soft);margin-top:10px}
+  @media(max-width:760px){.strip .rail .frame{width:180px}}
+  /* GIF + annotated */
+  .gifwrap{margin:26px auto 0;max-width:340px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .gifwrap img{width:100%;height:auto;display:block}
+  .annot{margin:30px 0 0;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+  .annot img{width:100%;height:auto;display:block}
+  .annot-cap, .gif-cap{font-size:13px;color:var(--ink-soft);margin-top:10px;text-align:center}
 
   .nextcta{padding:90px 0;text-align:center;background:var(--paper-2);margin-top:40px}
   .nextcta .small{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:22px}
@@ -212,44 +245,43 @@
     <div class="knum reveal">05 · The solution</div>
     <h2 class="h reveal">Three features, three jobs</h2>
 
-    <div class="feat reveal">
-      <div class="fn">01</div>
-      <div>
-        <div class="goal">Educate</div>
-        <h4>Workout library</h4>
-        <p>A Wikipedia-style reference paired with a video demo for every move (animated or real-life) so beginners can learn proper form and understand exactly what each exercise targets. It takes the fear and guesswork out of getting started.</p>
-      </div>
-    </div>
+    <div class="sol-row reveal">
+      <div class="sol-feats">
+        <div class="feat">
+          <div class="fn">01</div>
+          <div>
+            <div class="goal">Educate</div>
+            <h4>Workout library</h4>
+            <p>A Wikipedia-style reference paired with a video demo for every move (animated or real-life) so beginners can learn proper form and understand exactly what each exercise targets. It takes the fear and guesswork out of getting started.</p>
+          </div>
+        </div>
 
-    <div class="feat reveal">
-      <div class="fn">02</div>
-      <div>
-        <div class="goal">Empower</div>
-        <h4>Programs &amp; recommendations</h4>
-        <p>Users build their own workouts, or get recommended pre-made programs. This serves novices and gives trainers a way to share their programs and grow a following.</p>
-      </div>
-    </div>
+        <div class="feat">
+          <div class="fn">02</div>
+          <div>
+            <div class="goal">Empower</div>
+            <h4>Programs &amp; recommendations</h4>
+            <p>Users build their own workouts, or get recommended pre-made programs. This serves novices and gives trainers a way to share their programs and grow a following.</p>
+          </div>
+        </div>
 
-    <div class="feat reveal">
-      <div class="fn">03</div>
-      <div>
-        <div class="goal">Motivate</div>
-        <h4>Challenges &amp; points</h4>
-        <p>Quick daily challenges spark a little competitive fire, and finishing workouts (or having your shared program completed by others) earns points redeemable for coupons at favorite stores. A reason to come back, because the hardest step is starting.</p>
+        <div class="feat">
+          <div class="fn">03</div>
+          <div>
+            <div class="goal">Motivate</div>
+            <h4>Challenges &amp; points</h4>
+            <p>Quick daily challenges spark a little competitive fire, and finishing workouts (or having your shared program completed by others) earns points redeemable for coupons at favorite stores. A reason to come back, because the hardest step is starting.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="videowrap reveal">
-      <div class="vlabel">Prototype walkthrough</div>
-      <div class="vframe">
-        <iframe src="https://player.vimeo.com/video/445451468?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Pinnacle prototype walkthrough" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="videowrap">
+        <div class="vlabel">Prototype walkthrough</div>
+        <div class="vframe">
+          <iframe src="https://player.vimeo.com/video/445451468?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Pinnacle prototype walkthrough" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="vcap">A walkthrough of the interactive prototype.</div>
       </div>
-      <div class="vcap">A walkthrough of the interactive prototype.</div>
-    </div>
-    <div class="ph tall reveal">
-      <div class="picon">◳</div>
-      <div class="plabel">Feature screens</div>
-      <div class="phint">Add your final feature screens here.</div>
     </div>
   </div>
 </section>
@@ -259,10 +291,33 @@
     <div class="knum reveal">06 · Process</div>
     <h2 class="h reveal">From flows to wireframes to brand</h2>
     <p class="t reveal">I mapped a user flow to trace how someone would actually move through the app, then worked from low-fidelity sketches up through mid-fidelity wireframes. For branding, I chose a blue-green palette for its associations with energy, balance, and growth, though as it turned out that wasn't my first instinct.</p>
-    <div class="ph reveal">
-      <div class="picon">◳</div>
-      <div class="plabel">User flow, wireframes &amp; branding</div>
-      <div class="phint">Add your flow chart, the lo-fi → mid-fi wireframes, and the branding/color exploration.</div>
+
+    <div class="subsec reveal">
+      <div class="sublbl">User flow</div>
+      <h4>Mapping the journey</h4>
+      <p>User flow is crucial for seeing how the prototypical user walks through the app and the steps to complete a given action.</p>
+      <div class="figimg">
+        <img src="images/userflowforpinnacle.png" alt="Pinnacle user flow">
+      </div>
+    </div>
+
+    <div class="subsec reveal">
+      <div class="sublbl">Wireframes</div>
+      <h4>Low-fidelity to mid-fidelity</h4>
+      <p>From rough sketches to structured screens, refining layout before visual design.</p>
+      <div class="stackimg">
+        <img src="images/lowfiforpinnacle.png" alt="Low-fidelity wireframes">
+        <img src="images/midfiforpinnacle.png" alt="Mid-fidelity wireframes">
+      </div>
+    </div>
+
+    <div class="subsec reveal">
+      <div class="sublbl">Branding</div>
+      <h4>Finding the palette</h4>
+      <p>I wanted the central colors to feel energizing while still balancing and encouraging growth, which is why I chose a blue-green palette for the associations those colors carry in consumer psychology. In my first iteration I went with red as the main brand color, but once I brought in real-life photos, I switched to a neutral black to avoid clashing.</p>
+      <div class="figimg">
+        <img src="images/brandingforpinnacle.png" alt="Pinnacle branding and color exploration">
+      </div>
     </div>
   </div>
 </section>
@@ -279,7 +334,74 @@
       <li>The stats card confused people; it wasn't clear you could tap to flip it.</li>
       <li>My original vibrant red read as "danger," not the feeling you want after a workout.</li>
     </ul>
+
+    <div class="strip reveal" id="strip-first">
+      <div class="strip-head">
+        <div class="strip-title">First version · 14 screens</div>
+        <div class="strip-btns"><button data-rail="rail-first" data-dir="-1" aria-label="Previous">←</button><button data-rail="rail-first" data-dir="1" aria-label="Next">→</button></div>
+      </div>
+      <div class="rail" id="rail-first">
+          <div class="frame"><img src="images/pinnaclefirst1.png" alt="pinnaclefirst screen 1"></div>
+          <div class="frame"><img src="images/pinnaclefirst2.png" alt="pinnaclefirst screen 2"></div>
+          <div class="frame"><img src="images/pinnaclefirst3.png" alt="pinnaclefirst screen 3"></div>
+          <div class="frame"><img src="images/pinnaclefirst4.png" alt="pinnaclefirst screen 4"></div>
+          <div class="frame"><img src="images/pinnaclefirst5.png" alt="pinnaclefirst screen 5"></div>
+          <div class="frame"><img src="images/pinnaclefirst6.png" alt="pinnaclefirst screen 6"></div>
+          <div class="frame"><img src="images/pinnaclefirst7.png" alt="pinnaclefirst screen 7"></div>
+          <div class="frame"><img src="images/pinnaclefirst8.png" alt="pinnaclefirst screen 8"></div>
+          <div class="frame"><img src="images/pinnaclefirst9.png" alt="pinnaclefirst screen 9"></div>
+          <div class="frame"><img src="images/pinnaclefirst10.png" alt="pinnaclefirst screen 10"></div>
+          <div class="frame"><img src="images/pinnaclefirst11.png" alt="pinnaclefirst screen 11"></div>
+          <div class="frame"><img src="images/pinnaclefirst12.png" alt="pinnaclefirst screen 12"></div>
+          <div class="frame"><img src="images/pinnaclefirst13.png" alt="pinnaclefirst screen 13"></div>
+          <div class="frame"><img src="images/pinnaclefirst14.png" alt="pinnaclefirst screen 14"></div>
+      </div>
+      <div class="strip-hint">Swipe or scroll to see all 14 screens of the first version.</div>
+    </div>
+
     <p class="t reveal">That last point opened the most important change. My first iteration used a bold red background, and tested against green it <strong>failed WCAG AA and AAA contrast outright</strong>, which would have excluded color-blind and low-vision users. I rebuilt on a neutral black ground and hit <strong>AAA across the board</strong>. I also moved from pure graphics to a hybrid of icons and real photos, and added a "resume your latest workout" shortcut on the home screen.</p>
+    <div class="gifwrap reveal">
+      <img src="images/pinnaclegif.gif" alt="Resume your latest workout shortcut, animated">
+    </div>
+    <div class="gif-cap reveal">The "resume your latest workout" shortcut in action.</div>
+    <div class="subsec reveal" style="border-top:1px solid var(--line);padding-top:40px;margin-top:14px">
+      <div class="sublbl">Final version</div>
+      <h4>The redesign, screen by screen</h4>
+      <p>The full app after iteration: neutral ground, AAA contrast, and the workout library front and center.</p>
+    </div>
+    <div class="strip reveal" id="strip-final">
+      <div class="strip-head">
+        <div class="strip-title">Final version · 19 screens</div>
+        <div class="strip-btns"><button data-rail="rail-final" data-dir="-1" aria-label="Previous">←</button><button data-rail="rail-final" data-dir="1" aria-label="Next">→</button></div>
+      </div>
+      <div class="rail" id="rail-final">
+          <div class="frame"><img src="images/pinnaclefinal1.png" alt="pinnaclefinal screen 1"></div>
+          <div class="frame"><img src="images/pinnaclefinal2.png" alt="pinnaclefinal screen 2"></div>
+          <div class="frame"><img src="images/pinnaclefinal3.png" alt="pinnaclefinal screen 3"></div>
+          <div class="frame"><img src="images/pinnaclefinal4.png" alt="pinnaclefinal screen 4"></div>
+          <div class="frame"><img src="images/pinnaclefinal5.png" alt="pinnaclefinal screen 5"></div>
+          <div class="frame"><img src="images/pinnaclefinal6.png" alt="pinnaclefinal screen 6"></div>
+          <div class="frame"><img src="images/pinnaclefinal7.png" alt="pinnaclefinal screen 7"></div>
+          <div class="frame"><img src="images/pinnaclefinal8.png" alt="pinnaclefinal screen 8"></div>
+          <div class="frame"><img src="images/pinnaclefinal9.png" alt="pinnaclefinal screen 9"></div>
+          <div class="frame"><img src="images/pinnaclefinal10.png" alt="pinnaclefinal screen 10"></div>
+          <div class="frame"><img src="images/pinnaclefinal11.png" alt="pinnaclefinal screen 11"></div>
+          <div class="frame"><img src="images/pinnaclefinal12.png" alt="pinnaclefinal screen 12"></div>
+          <div class="frame"><img src="images/pinnaclefinal13.png" alt="pinnaclefinal screen 13"></div>
+          <div class="frame"><img src="images/pinnaclefinal14.png" alt="pinnaclefinal screen 14"></div>
+          <div class="frame"><img src="images/pinnaclefinal15.png" alt="pinnaclefinal screen 15"></div>
+          <div class="frame"><img src="images/pinnaclefinal16.png" alt="pinnaclefinal screen 16"></div>
+          <div class="frame"><img src="images/pinnaclefinal17.png" alt="pinnaclefinal screen 17"></div>
+          <div class="frame"><img src="images/pinnaclefinal18.png" alt="pinnaclefinal screen 18"></div>
+          <div class="frame"><img src="images/pinnaclefinal19.png" alt="pinnaclefinal screen 19"></div>
+      </div>
+      <div class="strip-hint">Swipe or scroll to see all 19 final screens.</div>
+    </div>
+    <div class="annot reveal">
+      <img src="images/pinnaclebigboi.png" alt="Annotated overview of the final Pinnacle design">
+    </div>
+    <div class="annot-cap reveal">A full annotated map of the final design.</div>
+
     <div class="snapshot reveal">
       <div class="stat"><div class="statnum">5 + <em>5</em></div><div class="statlabel">Participants across A/B and usability testing</div></div>
       <div class="stat"><div class="statnum"><em>AAA</em></div><div class="statlabel">WCAG contrast after the redesign, up from a failing palette</div></div>
@@ -336,6 +458,17 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // filmstrip arrow scrolling
+  document.querySelectorAll('.strip-btns button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const rail = document.getElementById(btn.dataset.rail);
+      if(!rail) return;
+      const frame = rail.querySelector('.frame');
+      const step = frame ? (frame.getBoundingClientRect().width + 16) * 2 : 300;
+      rail.scrollBy({left: step * Number(btn.dataset.dir), behavior:'smooth'});
+    });
+  });
 </script>
 </body>
 </html>
