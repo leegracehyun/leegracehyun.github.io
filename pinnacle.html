@@ -56,6 +56,25 @@
   .ph .picon{font-size:26px;color:var(--accent);margin-bottom:14px}
   .ph .plabel{font-family:'Newsreader',serif;font-size:18px;color:var(--ink);margin-bottom:6px}
   .ph .phint{font-size:13.5px;color:var(--ink-soft);max-width:46ch}
+  .persona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0;align-items:start}
+  .persona-grid .pcard{border-radius:8px;overflow:hidden}
+  .persona-grid .pcard img{width:100%;height:auto;display:block;border-radius:8px}
+  @media(max-width:760px){.persona-grid{grid-template-columns:1fr;gap:14px}}
+  .figimg{margin:30px 0;border-radius:8px;overflow:hidden}
+  .figimg img{width:100%;height:auto;display:block;border-radius:8px}
+  .prob-row{display:grid;grid-template-columns:1fr 0.78fr;gap:36px;align-items:stretch;margin:0}
+  .prob-row .prob-text{align-self:center}
+  .prob-row .prob-img{border-radius:8px;overflow:hidden}
+  .prob-row .prob-img .picon{font-size:24px;color:var(--accent);margin-bottom:10px}
+  .prob-row .prob-img .plabel{font-family:'Newsreader',serif;font-size:16px;color:var(--ink);margin-bottom:6px}
+  .prob-row .prob-img .phint{font-size:12.5px;color:var(--ink-soft);max-width:26ch}
+  .prob-row .prob-img img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}
+  @media(max-width:760px){.prob-row{grid-template-columns:1fr;gap:20px}.prob-row .prob-img{min-height:200px}}
+  .videowrap{margin:30px 0}
+  .videowrap .vlabel{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .videowrap .vframe{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--ink)}
+  .videowrap .vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+  .videowrap .vcap{font-size:13.5px;color:var(--ink-soft);margin-top:12px}
 
   .feat{padding:30px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
   .feat:last-of-type{border-bottom:1px solid var(--line)}
@@ -109,13 +128,13 @@
 
 <section class="cs-hero">
   <div class="wrap">
-    <div class="eyebrow">Case study — Consumer mobile</div>
+    <div class="eyebrow">Case study · Consumer mobile</div>
     <h1>Pinnacle</h1>
-    <p class="deck">A self-directed fitness app, designed end to end in a single month — built to teach beginners proper form, reward the habit, and connect novices with trainers. The passion project where I built my foundations, before IBM.</p>
+    <p class="deck">A self-directed fitness app, designed end to end in a single month, built to teach beginners proper form, reward the habit, and connect novices with trainers. The passion project where I built my foundations, before IBM.</p>
 
     <div class="meta">
       <div><div class="k">Role</div><div class="v">Sole contributor</div></div>
-      <div><div class="k">Timeline</div><div class="v">Jun – Jul 2020 · 1 month</div></div>
+      <div><div class="k">Timeline</div><div class="v">June – July 2020 · 1 month</div></div>
       <div><div class="k">Platform</div><div class="v">iOS app (concept)</div></div>
       <div><div class="k">Tools</div><div class="v">Figma, Illustrator, InVision</div></div>
     </div>
@@ -124,21 +143,28 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">01 — Overview</div>
+    <div class="knum reveal">01 · Overview</div>
     <h2 class="h reveal">An app that teaches, rewards, and connects</h2>
     <p class="t reveal">Pinnacle is an educational fitness app that pairs support with incentive. It's built around three ideas: a <strong>learning feature</strong> to build confidence, an <strong>incentive</strong> to keep people coming back, and a <strong>supportive community</strong> of both novices and trainers.</p>
     <div class="note reveal">
       <div class="lbl">The moment</div>
-      <p>Mid-2020. With studios closed and time suddenly abundant, at-home fitness exploded — and a wave of total beginners started working out for the first time, mostly by following along to videos. Pinnacle was my response to that moment.</p>
+      <p>Mid-2020. With studios closed and time suddenly abundant, at-home fitness exploded, and a wave of total beginners started working out for the first time, mostly by following along to videos. Pinnacle was my response to that moment.</p>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">02 — The problem</div>
+    <div class="knum reveal">02 · The problem</div>
     <h2 class="h reveal">Starting is easy. Staying is hard.</h2>
-    <p class="t reveal">Almost everyone is motivated to exercise at some point — but the motivation to <em>maintain</em> a routine tends to fall flat. The constraints are partly practical (time) and partly mental: we lose the confidence to keep pushing, especially when we're unsure we're even doing it right.</p>
+    <div class="prob-row reveal">
+      <div class="prob-text">
+        <p class="t">Almost everyone is motivated to exercise at some point, but the motivation to <em>maintain</em> a routine tends to fall flat. The constraints are partly practical (time) and partly mental: we lose the confidence to keep pushing, especially when we're unsure we're even doing it right.</p>
+      </div>
+      <div class="prob-img">
+        <img src="images/pinnacleforsection2.png" alt="Pinnacle — the problem">
+      </div>
+    </div>
     <div class="hill reveal">
       <div class="lbl">How might we</div>
       <blockquote>"How might we help people maintain their fitness health?"</blockquote>
@@ -149,10 +175,10 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">03 — Research</div>
+    <div class="knum reveal">03 · Research</div>
     <h2 class="h reveal">A hunch, then the proof</h2>
     <p class="t reveal"><strong>Secondary research.</strong> The signals were everywhere: fitness-equipment demand jumped 55% in a single mid-March week per the Digital Economy Index, major studios from Planet Fitness to Nike Training Club rushed out free programs, and SocialBlade showed fitness creators like Chloe Ting pulling 100M+ views in a month. People were exercising more than ever.</p>
-    <p class="t reveal"><strong>A public survey.</strong> I ran a short survey across my social platforms to understand <em>why</em>. Two insights cut through: people had picked it up partly out of pandemic boredom and newfound time, and they strongly preferred following along to video — being able to pause, replay, and watch a visual reference made all the difference.</p>
+    <p class="t reveal"><strong>A public survey.</strong> I ran a short survey across my social platforms to understand <em>why</em>. Two insights cut through: people had picked it up partly out of pandemic boredom and newfound time, and they strongly preferred following along to video; being able to pause, replay, and watch a visual reference made all the difference.</p>
     <div class="note reveal">
       <div class="lbl">In their words</div>
       <p>"I knew there were videos, but I didn't start until quarantine — it's nice watching someone else do it on video, because you can pause and stop whenever."</p>
@@ -162,25 +188,28 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">04 — Who I designed for</div>
+    <div class="knum reveal">04 · Who I designed for</div>
     <h2 class="h reveal">Two sides of one community</h2>
-    <p class="t reveal">Pinnacle is built for both <strong>fitness novices</strong> and <strong>fitness experts</strong>. A college student new to working out and a seasoned trainer should each find a purpose in the app — and ideally learn from each other when their paths cross. Personas spanning that range kept my decisions honest, like Mason Fox, who just wants to feel confident in his clothes.</p>
+    <p class="t reveal">Pinnacle is built for both <strong>fitness novices</strong> and <strong>fitness experts</strong>. A college student new to working out and a seasoned trainer should each find a purpose in the app, and ideally learn from each other when their paths cross. Personas spanning that range kept my decisions honest, like Mason Fox, who just wants to feel confident in his clothes.</p>
+    <div class="figimg reveal">
+      <img src="images/pinnacleforsection4.png" alt="Pinnacle — who I designed for">
+    </div>
     <ul class="stories reveal">
       <li>"As a dad, I need a consistent, healthier lifestyle so I can keep up with my kids."</li>
       <li>"As a high-school senior, I need to start working out so I can find the courage to ask Stacey on a date."</li>
-      <li>"As a fitness trainer, I need to mentor people toward healthier lives — which fulfills my own mission too."</li>
+      <li>"As a fitness trainer, I need to mentor people toward healthier lives, which fulfills my own mission too."</li>
     </ul>
-    <div class="ph reveal">
-      <div class="picon">◳</div>
-      <div class="plabel">Personas</div>
-      <div class="phint">Drop in your persona artboards (Mason and the others) here.</div>
+    <div class="persona-grid reveal">
+      <div class="pcard"><img src="images/personasforpinnacle-01.png" alt="Persona: Mason Fox"></div>
+      <div class="pcard"><img src="images/personasforpinnacle-02.png" alt="Persona 2"></div>
+      <div class="pcard"><img src="images/personasforpinnacle-03.png" alt="Persona 3"></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">05 — The solution</div>
+    <div class="knum reveal">05 · The solution</div>
     <h2 class="h reveal">Three features, three jobs</h2>
 
     <div class="feat reveal">
@@ -188,7 +217,7 @@
       <div>
         <div class="goal">Educate</div>
         <h4>Workout library</h4>
-        <p>A Wikipedia-style reference paired with a video demo for every move — animated or real-life — so beginners can learn proper form and understand exactly what each exercise targets. It takes the fear and guesswork out of getting started.</p>
+        <p>A Wikipedia-style reference paired with a video demo for every move (animated or real-life) so beginners can learn proper form and understand exactly what each exercise targets. It takes the fear and guesswork out of getting started.</p>
       </div>
     </div>
 
@@ -197,7 +226,7 @@
       <div>
         <div class="goal">Empower</div>
         <h4>Programs &amp; recommendations</h4>
-        <p>Users build their own workouts, or — if they don't know where to start — get recommended pre-made programs. This serves novices and gives trainers a way to share their programs and grow a following.</p>
+        <p>Users build their own workouts, or get recommended pre-made programs. This serves novices and gives trainers a way to share their programs and grow a following.</p>
       </div>
     </div>
 
@@ -206,23 +235,30 @@
       <div>
         <div class="goal">Motivate</div>
         <h4>Challenges &amp; points</h4>
-        <p>Quick daily challenges spark a little competitive fire, and finishing workouts — or having your shared program completed by others — earns points redeemable for coupons at favorite stores. A reason to come back, because the hardest step is starting.</p>
+        <p>Quick daily challenges spark a little competitive fire, and finishing workouts (or having your shared program completed by others) earns points redeemable for coupons at favorite stores. A reason to come back, because the hardest step is starting.</p>
       </div>
     </div>
 
+    <div class="videowrap reveal">
+      <div class="vlabel">Prototype walkthrough</div>
+      <div class="vframe">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Pinnacle prototype walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="vcap">A walkthrough of the interactive prototype.</div>
+    </div>
     <div class="ph tall reveal">
       <div class="picon">◳</div>
-      <div class="plabel">Feature screens &amp; prototype</div>
-      <div class="phint">Add your final feature screens here — and link the InVision demo if you'd like it embedded.</div>
+      <div class="plabel">Feature screens</div>
+      <div class="phint">Add your final feature screens here.</div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">06 — Process</div>
+    <div class="knum reveal">06 · Process</div>
     <h2 class="h reveal">From flows to wireframes to brand</h2>
-    <p class="t reveal">I mapped a user flow to trace how someone would actually move through the app, then worked from low-fidelity sketches up through mid-fidelity wireframes. For branding, I chose a blue-green palette for its associations with energy, balance, and growth — though, as it turned out, that wasn't my first instinct.</p>
+    <p class="t reveal">I mapped a user flow to trace how someone would actually move through the app, then worked from low-fidelity sketches up through mid-fidelity wireframes. For branding, I chose a blue-green palette for its associations with energy, balance, and growth, though as it turned out that wasn't my first instinct.</p>
     <div class="ph reveal">
       <div class="picon">◳</div>
       <div class="plabel">User flow, wireframes &amp; branding</div>
@@ -233,20 +269,20 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">07 — Testing &amp; iteration</div>
+    <div class="knum reveal">07 · Testing &amp; iteration</div>
     <h2 class="h reveal">Where the first version was wrong</h2>
-    <p class="t reveal"><strong>A/B testing.</strong> Five participants compared two layouts; four preferred seeing their progress first. They also flagged that it took too many clicks to get there — so I moved progress into the profile, a place people visit often anyway.</p>
-    <p class="t reveal"><strong>Usability testing.</strong> Five more participants walked the app over video calls — three pandemic-era beginners and two long-time gym-goers. What I heard:</p>
+    <p class="t reveal"><strong>A/B testing.</strong> Five participants compared two layouts; four preferred seeing their progress first. They also flagged that it took too many clicks to get there, so I moved progress into the profile, a place people visit often anyway.</p>
+    <p class="t reveal"><strong>Usability testing.</strong> Five more participants walked the app over video calls: three pandemic-era beginners and two long-time gym-goers. What I heard:</p>
     <ul class="findings reveal">
       <li>The workout library and its in-depth tutorials were the clear favorite.</li>
       <li>Consistent, welcoming branding made the app feel credible.</li>
-      <li>The stats card confused people — it wasn't clear you could tap to flip it.</li>
+      <li>The stats card confused people; it wasn't clear you could tap to flip it.</li>
       <li>My original vibrant red read as "danger," not the feeling you want after a workout.</li>
     </ul>
-    <p class="t reveal">That last point opened the most important change. My first iteration used a bold red background — and tested against green, it <strong>failed WCAG AA and AAA contrast outright</strong>, which would have excluded color-blind and low-vision users. I rebuilt on a neutral black ground and hit <strong>AAA across the board</strong>. I also moved from pure graphics to a hybrid of icons and real photos, and added a "resume your latest workout" shortcut on the home screen.</p>
+    <p class="t reveal">That last point opened the most important change. My first iteration used a bold red background, and tested against green it <strong>failed WCAG AA and AAA contrast outright</strong>, which would have excluded color-blind and low-vision users. I rebuilt on a neutral black ground and hit <strong>AAA across the board</strong>. I also moved from pure graphics to a hybrid of icons and real photos, and added a "resume your latest workout" shortcut on the home screen.</p>
     <div class="snapshot reveal">
       <div class="stat"><div class="statnum">5 + <em>5</em></div><div class="statlabel">Participants across A/B and usability testing</div></div>
-      <div class="stat"><div class="statnum"><em>AAA</em></div><div class="statlabel">WCAG contrast after the redesign — up from a failing palette</div></div>
+      <div class="stat"><div class="statnum"><em>AAA</em></div><div class="statlabel">WCAG contrast after the redesign, up from a failing palette</div></div>
       <div class="stat"><div class="statnum"><em>2</em></div><div class="statlabel">Full iterations, start to finish</div></div>
     </div>
   </div>
@@ -254,10 +290,10 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">08 — Reflection</div>
+    <div class="knum reveal">08 · Reflection</div>
     <h2 class="h reveal">No one starts perfectly</h2>
-    <p class="t reveal">Pinnacle taught me to articulate <em>why</em> one design beats its alternative, not just to trust my gut — and that iteration isn't a failure state, it's the work. It also surfaced a real tendency of mine toward vivid color, and pushed me to earn restraint through accessibility rather than aesthetics alone.</p>
-    <p class="t reveal">It's an early project, and it shows its age in places. But the instincts I leaned on here — research first, design for the edges, test honestly, iterate — are the same ones I carried into enterprise work at IBM.</p>
+    <p class="t reveal">Pinnacle taught me to articulate <em>why</em> one design beats its alternative, not just to trust my gut, and that iteration isn't a failure state but the work itself. It also surfaced a real tendency of mine toward vivid color, and pushed me to earn restraint through accessibility rather than aesthetics alone.</p>
+    <p class="t reveal">It's an early project, and it shows its age in places. But the instincts I leaned on here, research first, design for the edges, test honestly, iterate, are the same ones I carried into enterprise work at IBM.</p>
   </div>
 </section>
 
