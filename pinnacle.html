@@ -129,6 +129,11 @@
   .annot{margin:30px 0 0;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
   .annot img{width:100%;height:auto;display:block}
   .annot-cap, .gif-cap{font-size:13px;color:var(--ink-soft);margin-top:10px;text-align:center}
+  .decisions{margin:8px 0 0}
+  .decisions .decision{padding:22px 0;border-bottom:1px solid var(--line)}
+  .decisions .decision:first-child{border-top:1px solid var(--line)}
+  .decisions .dec-k{font-family:'Newsreader',serif;font-weight:440;font-size:1.2rem;color:var(--ink);margin-bottom:10px;padding-left:16px;border-left:3px solid var(--accent)}
+  .decisions .decision p{font-size:16px;color:var(--ink-soft);line-height:1.6;max-width:70ch}
 
   .nextcta{padding:90px 0;text-align:center;background:var(--paper-2);margin-top:40px}
   .nextcta .small{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:22px}
@@ -360,10 +365,25 @@
     </div>
 
     <p class="t reveal">That last point opened the most important change. My first iteration used a bold red background, and tested against green it <strong>failed WCAG AA and AAA contrast outright</strong>, which would have excluded color-blind and low-vision users. I rebuilt on a neutral black ground and hit <strong>AAA across the board</strong>. I also moved from pure graphics to a hybrid of icons and real photos, and added a "resume your latest workout" shortcut on the home screen.</p>
-    <div class="gifwrap reveal">
-      <img src="images/pinnaclegif.gif" alt="Resume your latest workout shortcut, animated">
+    <div class="subsec reveal" style="border-top:1px solid var(--line);padding-top:40px;margin-top:14px">
+      <div class="sublbl">Decisions · second round of iterations</div>
+      <h4>The calls I made, and why</h4>
     </div>
-    <div class="gif-cap reveal">The "resume your latest workout" shortcut in action.</div>
+    <div class="decisions reveal">
+      <div class="decision">
+        <div class="dec-k">Color &amp; accessibility</div>
+        <p>I gravitate toward vivid palettes, but I'd never really considered how color affects accessibility. WCAG's AA and AAA levels measure contrast between foreground and background, and my initial red-green combo failed outright. Keeping it would have excluded visually-impaired users, including people who are color-blind. So I switched to a neutral black background, which paired with the main font color scored straight AAA across the board. I'm glad I failed first, because it made me value color accessibility far more.</p>
+      </div>
+      <div class="decision">
+        <div class="dec-k">Graphics vs. real-life photos</div>
+        <p>This felt like a no-brainer; I'd always pictured Pinnacle using real-life photos. But I had to actually put them in the prototype to see whether they'd still communicate clearly. I landed on a hybrid: icons where consistent branding matters most, like the workout library, and real photos everywhere else.</p>
+      </div>
+      <div class="decision">
+        <div class="dec-k">A clear path to the workout library</div>
+        <p>It was my fault the path to a user's workout programs wasn't obvious. So I added a way to jump back into their most recent workout right from the home screen, giving them easy access anywhere, anytime.</p>
+      </div>
+    </div>
+
     <div class="subsec reveal" style="border-top:1px solid var(--line);padding-top:40px;margin-top:14px">
       <div class="sublbl">Final version</div>
       <h4>The redesign, screen by screen</h4>
@@ -403,9 +423,9 @@
     <div class="annot-cap reveal">A full annotated map of the final design.</div>
 
     <div class="snapshot reveal">
-      <div class="stat"><div class="statnum">5 + <em>5</em></div><div class="statlabel">Participants across A/B and usability testing</div></div>
+      <div class="stat"><div class="statnum"><em>10</em></div><div class="statlabel">Participants across A/B and usability testing</div></div>
       <div class="stat"><div class="statnum"><em>AAA</em></div><div class="statlabel">WCAG contrast after the redesign, up from a failing palette</div></div>
-      <div class="stat"><div class="statnum"><em>2</em></div><div class="statlabel">Full iterations, start to finish</div></div>
+      <div class="stat"><div class="statnum"><em>4</em></div><div class="statlabel">Usability issues found and fixed in the redesign</div></div>
     </div>
   </div>
 </section>
@@ -414,8 +434,9 @@
   <div class="wrap">
     <div class="knum reveal">08 · Reflection</div>
     <h2 class="h reveal">No one starts perfectly</h2>
-    <p class="t reveal">Pinnacle taught me to articulate <em>why</em> one design beats its alternative, not just to trust my gut, and that iteration isn't a failure state but the work itself. It also surfaced a real tendency of mine toward vivid color, and pushed me to earn restraint through accessibility rather than aesthetics alone.</p>
-    <p class="t reveal">It's an early project, and it shows its age in places. But the instincts I leaned on here, research first, design for the edges, test honestly, iterate, are the same ones I carried into enterprise work at IBM.</p>
+    <p class="t reveal">It feels a little strange to call this "final thoughts," since I've built a habit of revisiting my projects; I might be back before I even finish writing this section. But for now, Pinnacle is still one of my favorites. It taught me to articulate <em>why</em> one design beats its alternative instead of just trusting my gut, and that iteration isn't a failure state but the work itself. It also caught a real flaw of mine, my pull toward colorful palettes, and the second iteration is where I learned to optimize the branding with far fewer colors.</p>
+    <p class="t reveal">That lesson reframed accessibility as part of engagement, not separate from it. The Doherty Threshold, which traces back to the IBM Systems Journal, holds that a system keeps a user's attention when it responds within about 400ms. The idea generalizes: anything that breaks a user's flow, whether sluggish feedback or text they can't comfortably read, pulls them out of the experience. A palette that fails contrast does exactly that, quietly turning something meant to feel effortless into something frustrating.</p>
+    <p class="t reveal">Creating a product is hard, and I won't pretend otherwise. I was overwhelmed trying to solve every problem a user might have, then determined to find one concise solution to the bigger one, and somewhere in there I built a fitness app called Pinnacle. It's an early project and it shows its age in places, but the instincts I leaned on here, research first, design for the edges, test honestly, iterate, are the same ones I carried into enterprise work at IBM. Until next time, have a healthy day.</p>
   </div>
 </section>
 
