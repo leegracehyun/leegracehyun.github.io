@@ -80,6 +80,17 @@
   .nextcta .small{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:22px}
   .nextcta a{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(2rem,6vw,3.6rem);color:var(--ink);text-decoration:none;transition:color .4s}
   .nextcta a:hover{color:var(--accent)}
+  .morework{padding:88px 0 0}
+  .morework .mw-head{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:30px;text-align:center}
+  .morework .mw-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:920px;margin:0 auto}
+  .morework .mw-card{display:block;text-decoration:none;color:inherit;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:34px 32px;transition:transform .45s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .45s}
+  .morework .mw-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 34px rgba(0,25,41,.1)}
+  .morework .mw-k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+  .morework .mw-name{font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.5rem,3.5vw,2.1rem);letter-spacing:-.015em;line-height:1.08;margin-bottom:14px}
+  .morework .mw-card:hover .mw-name{color:var(--accent)}
+  .morework .mw-meta{font-size:14px;color:var(--ink-soft);line-height:1.5}
+  .morework .mw-arrow{margin-top:18px;font-size:14px;color:var(--accent);letter-spacing:.02em}
+  @media(max-width:680px){.morework{padding:60px 0 0}.morework .mw-grid{grid-template-columns:1fr;gap:14px}}
   footer{padding:30px 0;border-top:1px solid var(--line)}
   footer .wrap{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:10px}
 
@@ -245,6 +256,26 @@
     <h2 class="h reveal">No one starts perfectly</h2>
     <p class="t reveal">Pinnacle taught me to articulate <em>why</em> one design beats its alternative, not just to trust my gut — and that iteration isn't a failure state, it's the work. It also surfaced a real tendency of mine toward vivid color, and pushed me to earn restraint through accessibility rather than aesthetics alone.</p>
     <p class="t reveal">It's an early project, and it shows its age in places. But the instincts I leaned on here — research first, design for the edges, test honestly, iterate — are the same ones I carried into enterprise work at IBM.</p>
+  </div>
+</section>
+
+<section class="morework">
+  <div class="wrap">
+    <div class="mw-head">More work</div>
+    <div class="mw-grid">
+      <a class="mw-card" href="watsonx-data.html">
+        <div class="mw-k">Enterprise · PLG</div>
+        <div class="mw-name">watsonx.data</div>
+        <div class="mw-meta">Cutting first-run provisioning from 15 minutes to 2 for IBM's open data lakehouse.</div>
+        <div class="mw-arrow">View case study →</div>
+      </a>
+      <a class="mw-card" href="db2-intelligence-center.html">
+        <div class="mw-k">Enterprise · AI assistant</div>
+        <div class="mw-name">Db2 Intelligence Center</div>
+        <div class="mw-meta">Designing an AI assistant experience from 0 to GA inside Db2.</div>
+        <div class="mw-arrow">View case study →</div>
+      </a>
+    </div>
   </div>
 </section>
 
