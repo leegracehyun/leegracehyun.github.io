@@ -38,6 +38,10 @@
   .meta .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
   .meta .v{font-size:15px;color:var(--ink);line-height:1.45}
   @media(max-width:760px){.meta{grid-template-columns:1fr 1fr;gap:22px}}
+  .skills{margin-top:30px}
+  .skills .skills-k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .skills .skills-tags{display:flex;flex-wrap:wrap;gap:8px}
+  .skills .skills-tags span{font-size:13px;letter-spacing:.01em;color:var(--ink);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:var(--paper-2)}
 
   /* body sections */
   section.block{padding:64px 0}
@@ -77,7 +81,14 @@
   .cake .c{background:var(--paper-2);border-radius:8px;padding:26px 24px;border-top:3px solid var(--accent)}
   .cake .c .ct{font-family:'Newsreader',serif;font-size:1.15rem;margin-bottom:8px}
   .cake .c .cd{font-size:14.5px;color:var(--ink-soft)}
+  .cake .c .cd ul{list-style:none;margin:0;padding:0}
+  .cake .c .cd li{position:relative;padding:5px 0 5px 16px;line-height:1.45}
+  .cake .c .cd li::before{content:"";position:absolute;left:0;top:13px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
   @media(max-width:760px){.cake{grid-template-columns:1fr}}
+  .concept-shots{display:flex;flex-direction:column;gap:30px;margin:30px 0}
+  .concept-shots .shotlbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .concept-shots .shot .ph{min-height:300px;margin:0}
+  .concept-shots .shot img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line)}
   @media(max-width:760px){.persona-row{grid-template-columns:1fr!important;gap:24px!important;}}
 
   .findings{list-style:none;margin:24px 0}
@@ -116,46 +127,62 @@
 
 <section class="cs-hero">
   <div class="wrap">
-    <div class="eyebrow">Case study — Enterprise / AI</div>
+    <div class="eyebrow">Case study · Enterprise / AI</div>
     <h1>Db2 Intelligence Center</h1>
-    <p class="deck">An AI-driven database management console designed to streamline administration and empower DBAs of all experience levels to manage databases more efficiently — taken from concept to general availability.</p>
+    <p class="deck">An AI-driven database management console designed to streamline administration and empower DBAs of all experience levels to manage databases more efficiently, taken from concept to general availability.</p>
 
     <div class="meta">
-      <div><div class="k">Role</div><div class="v">UX Designer — concept → GA</div></div>
+      <div><div class="k">Role</div><div class="v">UX Designer · concept → GA</div></div>
       <div><div class="k">Timeline</div><div class="v">2024–2025 · 1.5 years</div></div>
-      <div><div class="k">Team</div><div class="v">PM, development, visual design (Fang Shih)</div></div>
+      <div><div class="k">Team</div><div class="v">PM, development, visual design</div></div>
       <div><div class="k">Tools</div><div class="v">Figma, Mural, Box</div></div>
+    </div>
+
+    <div class="skills reveal">
+      <div class="skills-k">Skills explored</div>
+      <div class="skills-tags">
+        <span>Stakeholder alignment &amp; facilitation</span>
+        <span>Jobs-to-be-done</span>
+        <span>Collecting requirements</span>
+        <span>Cross-functional collaboration</span>
+        <span>Competitive analysis</span>
+        <span>User stories &amp; hills</span>
+        <span>Agile design</span>
+        <span>Prototyping</span>
+        <span>User research &amp; feedback testing</span>
+        <span>Design QA &amp; implementation review</span>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">01 — Context</div>
+    <div class="knum reveal">01 · Context</div>
     <h2 class="h reveal">What is Db2, and what were we building?</h2>
-    <p class="t reveal">Db2 is a relational database management system — an organized, secure digital filing system for very large amounts of data. It's really a family of data-management products, from an analytics warehouse to monitoring tools.</p>
+    <p class="t reveal">Db2 is a relational database management system: an organized, secure digital filing system for very large amounts of data. It's really a family of data-management products, from an analytics warehouse to monitoring tools.</p>
     <div class="note reveal">
       <div class="lbl">In plain terms</div>
       <p>If you've never touched a database: think of Db2 as a massive, high-security filing system that companies trust to never break, never lose data, and never slow down. Database administrators are the people who keep it that way.</p>
     </div>
-    <p class="t reveal"><strong>Db2 Intelligence Center</strong> is an AI-driven console that brings database administration into a single, intelligent workspace. Db2 sat under my team's portfolio, so I was part of the original design team that took it to market in June 2025 — work that built on everything I'd done across the Db2 family since joining IBM in 2021.</p>
+    <p class="t reveal"><strong>Db2 Intelligence Center</strong> is an AI-driven console that brings database administration into a single, intelligent workspace. Db2 sat under my team's portfolio, so I was part of the original design team that took it to market in June 2025, building on everything I'd done across the Db2 family since joining IBM in 2021.</p>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">02 — The user</div>
+    <div class="knum reveal">02 · The user</div>
     <h2 class="h reveal">Meet Bob, a Database Administrator</h2>
     <div class="reveal persona-row" style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;margin-top:14px;">
-      <p class="t" style="margin:0;">Our target user is the DBA — the person whose job is to make sure databases never break, never lose data, and never get slow. Bob is responsible for the overall health of his company's databases. DBAs like Bob are the guardians of a company's data.</p>
-      <img src="images/boy-persona.png" alt="Bob, the DBA — persona illustration" style="display:block;width:100%;max-width:340px;margin:0 auto;">
+      <p class="t" style="margin:0;">Our target user is the DBA, the person whose job is to make sure databases never break, never lose data, and never get slow. Bob is responsible for the overall health of his company's databases. DBAs like Bob are the guardians of a company's data.</p>
+      <img src="images/boy-persona.png" alt="Bob, the DBA persona illustration" style="display:block;width:100%;max-width:340px;margin:0 auto;">
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">03 — The problem</div>
+    <div class="knum reveal">03 · The problem</div>
     <h2 class="h reveal">Where the current experience was breaking down</h2>
     <p class="t reveal">To design for Bob, we first had to understand which of his jobs-to-be-done actually needed relief. In a workshop in April 2024 we gathered pain points from real DBAs and grouped them into themes.</p>
     <div class="ph reveal">
@@ -168,9 +195,9 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">04 — Direction</div>
+    <div class="knum reveal">04 · Direction</div>
     <h2 class="h reveal">Our hill</h2>
-    <p class="t reveal">At IBM we use <strong>hills</strong> — a single, clear sentence that captures the meaningful outcome we're designing toward, without overcomplicating it. It sets the direction for everything that follows.</p>
+    <p class="t reveal">At IBM we use <strong>hills</strong>, a single clear sentence that captures the meaningful outcome we're designing toward, without overcomplicating it. It sets the direction for everything that follows.</p>
     <div class="hill reveal">
       <div class="lbl">The hill</div>
       <blockquote>"As a DBA, I can manage my databases with the assistance of AI so that I can accelerate my workflow."</blockquote>
@@ -180,20 +207,20 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">05 — Planning</div>
+    <div class="knum reveal">05 · Planning</div>
     <h2 class="h reveal">Roadmap: the cake method</h2>
     <p class="t reveal">Working closely with PM, we drafted a roadmap and used the cake method to decide what design would tackle, and when.</p>
     <div class="cake reveal">
-      <div class="c"><div class="ct">🧁 Cupcake</div><div class="cd">What design addresses now — the essential first slice.</div></div>
-      <div class="c"><div class="ct">🎂 Birthday cake</div><div class="cd">What comes next, building on the foundation.</div></div>
-      <div class="c"><div class="ct">💍 Wedding cake</div><div class="cd">The blue-sky vision for where the product could go.</div></div>
+      <div class="c"><div class="ct">🧁 Cupcake</div><div class="cd"><ul><li>Simple documentation requests</li><li>Able to answer questions about my version of Db2</li></ul></div></div>
+      <div class="c"><div class="ct">🎂 Birthday cake</div><div class="cd"><ul><li>Set up alerts and notifications</li><li>Third-party integration (e.g. Slack, GitHub)</li></ul></div></div>
+      <div class="c"><div class="ct">💍 Wedding cake</div><div class="cd"><ul><li>Tune queries</li><li>Automate my tasks and more</li></ul></div></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">06 — Design concepts</div>
+    <div class="knum reveal">06 · Design concepts</div>
     <h2 class="h reveal">The features we shaped</h2>
     <p class="t reveal">From the requirements, we settled on five core capabilities. The two I owned end to end are marked.</p>
 
@@ -201,7 +228,7 @@
       <div class="fn">01</div>
       <div>
         <h4>Unified management</h4>
-        <p>A single, intuitive pane of glass to monitor and manage a fleet of Db2 instances across hybrid environments — reducing context-switching and improving visibility across the whole estate. This made the landing page critical to our users' efficiency.</p>
+        <p>A single, intuitive pane of glass to monitor and manage a fleet of Db2 instances across hybrid environments, reducing context-switching and improving visibility across the whole estate, which made the landing page critical to our users' efficiency.</p>
       </div>
     </div>
 
@@ -209,7 +236,7 @@
       <div class="fn">02</div>
       <div>
         <h4>Monitoring drill-downs</h4>
-        <p>Db2-specific monitoring with deep visibility into CPU, I/O, waits, and locks — enabling fast root-cause identification, preventing degradation, and cutting troubleshooting time. A monitoring hub directly addressed one of Bob's daily pain points.</p>
+        <p>Db2-specific monitoring with deep visibility into CPU, I/O, waits, and locks, enabling fast root-cause identification, preventing degradation, and cutting troubleshooting time. A monitoring hub directly addressed one of Bob's daily pain points.</p>
       </div>
     </div>
 
@@ -225,7 +252,7 @@
       <div class="fn">04</div>
       <div>
         <h4>Tune configurations <span class="owned">I owned this</span></h4>
-        <p>Simplified configuration management — an intuitive interface to view, edit, and track Db2 settings, minimizing errors and reducing manual overhead. Another part of the data workbench I drove, letting users fine-tune and resolve issues quickly.</p>
+        <p>Simplified configuration management: an intuitive interface to view, edit, and track Db2 settings, minimizing errors and reducing manual overhead. Another part of the data workbench I drove, letting users fine-tune and resolve issues quickly.</p>
       </div>
     </div>
 
@@ -233,24 +260,37 @@
       <div class="fn">05</div>
       <div>
         <h4>AI-powered database assistant <span class="owned">I owned this</span></h4>
-        <p>A generative-AI assistant offering guidance in natural language. Using telemetry, it helps DBAs resolve common issues, optimize performance, and skill up on Db2 faster — answering questions specific to your Db2 version. This assistant is where the whole product began, and the effort I led first before it grew into a full product.</p>
+        <p>A generative-AI assistant offering guidance in natural language. Using telemetry, it helps DBAs resolve common issues, optimize performance, and skill up on Db2 faster, answering questions specific to your Db2 version. This assistant is where the whole product began, and the effort I led first before it grew into a full product.</p>
       </div>
     </div>
 
-    <div class="ph tall reveal">
-      <div class="picon">◳</div>
-      <div class="plabel">Design concept screens</div>
-      <div class="phint">Add your hi-fi screens here — landing page, monitoring hub, and the data workbench. Mix full-width shots with detail crops.</div>
+    <div class="concept-shots reveal">
+      <div class="shot">
+        <div class="shotlbl">Landing page</div>
+        <div class="ph"><div class="picon">◳</div><div class="plabel">Landing page</div><div class="phint">Add your landing page screen here.</div></div>
+      </div>
+      <div class="shot">
+        <div class="shotlbl">Monitoring hub</div>
+        <div class="ph"><div class="picon">◳</div><div class="plabel">Monitoring hub</div><div class="phint">Add your monitoring hub screen here.</div></div>
+      </div>
+      <div class="shot">
+        <div class="shotlbl">Monitoring hub · SQL details</div>
+        <div class="ph"><div class="picon">◳</div><div class="plabel">Monitoring hub - SQL details</div><div class="phint">Add your SQL details screen here.</div></div>
+      </div>
+      <div class="shot">
+        <div class="shotlbl">Data workbench</div>
+        <div class="ph"><div class="picon">◳</div><div class="plabel">Data workbench</div><div class="phint">Add your data workbench screen here.</div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">07 — Validation</div>
+    <div class="knum reveal">07 · Validation</div>
     <h2 class="h reveal">Usability testing, at scale</h2>
-    <p class="t reveal">Throughout the project we ran biweekly feedback sessions with members of Db2's technical advisory board — users who know the product inside out. But we wanted to validate at a larger scale.</p>
-    <p class="t reveal">Db2 has a famously loyal community, and every year they gather at <strong>IDUG</strong> (the International Db2 User Group — owned by the users, not IBM). With IDUG EMEA in Valencia, Spain around the corner, I represented design alongside visual designer Fang Shih to test our work. That meant building a prototype in a week — which my team and I pulled off in time for testing.</p>
+    <p class="t reveal">Throughout the project we ran biweekly feedback sessions with members of Db2's technical advisory board, users who know the product inside out. But we wanted to validate at a larger scale.</p>
+    <p class="t reveal">Db2 has a famously loyal community, and every year they gather at <strong>IDUG</strong> (the International Db2 User Group, owned by the users, not IBM). With IDUG EMEA in Valencia, Spain around the corner, I represented design to test our work. That meant building a prototype in a week, which my team and I pulled off in time for testing.</p>
     <div class="ph reveal">
       <div class="picon">◳</div>
       <div class="plabel">Testing at IDUG Valencia</div>
@@ -261,11 +301,11 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">08 — Findings</div>
-    <h2 class="h reveal">What participants told us — the data workbench</h2>
+    <div class="knum reveal">08 · Findings</div>
+    <h2 class="h reveal">What participants told us: the data workbench</h2>
     <p class="t reveal">Participants appreciated the clean, efficient layout and the logical order of information. The feedback that shaped our next iterations:</p>
     <ul class="findings reveal">
-      <li>Modular design — with the ability to expand original SQL and optimized indexes — was seen as critical.</li>
+      <li>Modular design, with the ability to expand original SQL and optimized indexes, was seen as critical.</li>
       <li>Requests for parametric markers within SQL statements.</li>
       <li>Users wanted to see current index and query-origin information (which the alert center and monitoring hub help surface).</li>
       <li>Strong emphasis on verifying optimized indexes independently.</li>
@@ -276,19 +316,19 @@
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">09 — Reflection</div>
+    <div class="knum reveal">09 · Reflection</div>
     <h2 class="h reveal">A question that will shape what's next</h2>
     <p class="t reveal">Across conversations with customers and the product team, one question kept rising to the top: <strong>how do we build a product whose core audience is getting older, while also making it accessible to a younger, newer generation of DBAs?</strong></p>
-    <p class="t reveal">Db2's primary users are senior DBAs, and they're the first to worry about the next generation — how to onboard junior DBAs and help them get familiar with the product. That points toward developer editions and pricing plans accessible to a far wider audience.</p>
+    <p class="t reveal">Db2's primary users are senior DBAs, and they're the first to worry about the next generation: how to onboard junior DBAs and help them get familiar with the product. That points toward developer editions and pricing plans accessible to a far wider audience.</p>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="knum reveal">10 — Outcome</div>
+    <div class="knum reveal">10 · Outcome</div>
     <h2 class="h reveal">Launch &amp; reception</h2>
-    <p class="t reveal">I returned the following year to IDUG NA in Atlanta — this time as Db2 Intelligence Center reached general availability. We received widespread acclaim for the look of the product and, most importantly, its intuitive experience, validating exactly what we'd seen in testing in Valencia.</p>
-    <p class="t reveal">This product was made with care — from daily evening working sessions with our development team in India to design reviews with PM during the day. We worked around the clock as a team. Db2 has a special place in my heart, and I'm honored to have been part of its debut.</p>
+    <p class="t reveal">I returned the following year to IDUG NA in Atlanta, this time as Db2 Intelligence Center reached general availability. We received widespread acclaim for the look of the product and, most importantly, its intuitive experience, validating exactly what we'd seen in testing in Valencia.</p>
+    <p class="t reveal">This product was made with care, from daily evening working sessions with our development team in India to design reviews with PM during the day. We worked around the clock as a team. Db2 has a special place in my heart, and I'm honored to have been part of its debut.</p>
   </div>
 </section>
 
